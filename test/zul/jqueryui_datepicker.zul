@@ -1,0 +1,432 @@
+<?page title="datepicker" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<window id="win1" title="test jqueryui datepicker" border="normal" apply="jqueryuitest.DatepickerController">
+
+	default:
+	<datepicker/>
+	target:
+	<datepicker id="target"/>	
+	<!--	
+	disabled: true
+	<datepicker disabled="true" />
+	autoSize: true
+	<datepicker autoSize="true" dateFormat="D, dd M yy"/>
+	<datepicker autoSize="true" />
+	buttonImageOnly="true"
+	<datepicker buttonImageOnly="true" />
+	changeMonth:
+	<datepicker changeMonth="true" />
+	changeYear:
+	<datepicker changeYear="true" />	
+	constrainInput="false"
+	<datepicker constrainInput="false" />
+	gotoCurrent="true"
+	<datepicker gotoCurrent="true" />
+	hideIfNoPrevNext="true"
+	<datepicker hideIfNoPrevNext="true" />	
+	isRTL="true"
+	<datepicker isRTL="true" />
+	navigationAsDateFormat="true"
+	<datepicker navigationAsDateFormat="true" />
+	selectOtherMonths="true"
+	<datepicker selectOtherMonths="true" />
+	showButtonPanel="true" 
+	<datepicker showButtonPanel="true" />
+	showMonthAfterYear="true"
+	<datepicker showMonthAfterYear="true" />
+	showOtherMonths="true"
+	<datepicker showOtherMonths="true" />
+	showWeek="true"
+	<datepicker showWeek="true" />
+
+    <html><![CDATA[    
+	<input type="text" id="actualDate"></input>
+	]]></html>  		
+	altField="#actualDate" altFormat="dd/MM/yy"
+	<datepicker altField="#actualDate" altFormat="dd/MM/yy"/>
+
+	
+	appendText="yyddmm"
+	<datepicker appendText="yyddmm" />
+	
+	buttonImage="/1.jpg"
+	<datepicker buttonImage="/1.jpg" showButtonPanel="true" buttonImageOnly="true"/>
+		
+	buttonText="buttonText"
+	<datepicker buttonText="buttonText" />
+	
+	closeText="closeText"
+	<datepicker closeText="closeText" showButtonPanel="true"/>
+	
+	currentText="currentText"
+	<datepicker currentText="currentText" showButtonPanel="true"/>
+		
+	dateFormat="D, dd M yy"
+	<datepicker dateFormat="D, dd M yy"/>
+	
+	nextText="nextText"
+	<datepicker nextText="nextText"/>
+	
+	prevText="prevText"
+	<datepicker prevText="prevText"/>
+	
+	showAnim="slideDown"
+	<datepicker showAnim="slideDown"/>
+	
+	showOn="both"
+	<datepicker showOn="both"/>	
+	showOn="button"
+	<datepicker showOn="button"/>
+	
+	weekHeader="weekHeader"
+	<datepicker weekHeader="weekHeader" showWeek="true"/>
+	
+	yearRange="c-1:c+1"
+	<datepicker changeYear="true" yearRange="c-1:c+1"/>
+	
+	yearSuffix="yearSuffix"
+	<datepicker yearSuffix="yearSuffix"/>
+	
+	firstDay="2"
+	<datepicker firstDay="2"/>
+	
+	showCurrentAtPos="2"
+	<datepicker showCurrentAtPos="2"/>
+
+	stepMonths="2"
+	<datepicker stepMonths="2"/>
+			
+	dayNames="a,b,c,d,e,f,g"
+	<datepicker dayNames="a,b,c,d,e,f,g"/>
+	
+	dayNamesMin="a,b,c,d,e,f,g"
+	<datepicker dayNamesMin="a,b,c,d,e,f,g"/>
+		
+	dayNamesShort="a,b,c,d,e,f,g"
+	<datepicker dayNamesShort="a,b,c,d,e,f,g" dateFormat="D, dd M yy"/>
+	
+	monthNames="a,b,c,d,e,f,g,h,i,j,k,l"
+	<datepicker monthNames="a,b,c,d,e,f,g,h,i,j,k,l"/>
+
+	monthNamesShort="a,b,c,d,e,f,g,h,i,j,k,l"/
+	<datepicker monthNamesShort="a,b,c,d,e,f,g,h,i,j,k,l" dateFormat="D, dd M yy"/>
+	
+	defaultDate="02/02/2022"
+	<datepicker defaultDate="02/02/2022"/>
+
+	defaultDate="+1m +7d"
+	<datepicker defaultDate="+1m +7d"/>
+
+
+	defaultDate="+7"
+	<datepicker defaultDate="+7"/>
+
+	defaultDate="7"
+	<datepicker defaultDate="7"/>
+
+	defaultDate="-7"
+	<datepicker defaultDate="-7"/>
+	
+
+	<zscript><![CDATA[
+		date = new Date(2012,1,1);
+	]]>
+	</zscript>
+	defaultDate=${date};
+	<datepicker defaultDate="${date}" />
+
+	 
+	duration="slow"
+	<datepicker duration="slow"/>
+	duration="fast"
+	<datepicker duration="fast"/>
+	duration="2000"
+	<datepicker duration="2000"/>
+
+	
+	maxDate="06/02/2010"
+	<datepicker maxDate="06/02/2010"/>
+
+	maxDate="+1m +7d"
+	<datepicker maxDate="+1m +7d"/>
+
+	maxDate="+7"
+	<datepicker maxDate="+7"/>
+
+	maxDate="7"
+	<datepicker maxDate="7"/>
+
+	maxDate="-7"
+	<datepicker maxDate="-7"/>
+	
+	
+	<zscript><![CDATA[
+		date = new Date(40,10,10);
+	]]>
+	</zscript>
+	maxDate=${date};
+	<datepicker maxDate="${date}" />
+
+	 
+	minDate="06/02/2010"
+	<datepicker minDate="06/02/2010"/>
+
+	minDate="+1m +7d"
+	<datepicker minDate="+1m +7d"/>
+
+	minDate="+7"
+	<datepicker minDate="+7"/>
+
+	minDate="7"
+	<datepicker minDate="7"/>
+
+	minDate="-7"
+	<datepicker minDate="-7"/>
+	
+	
+	<zscript><![CDATA[
+		date = new Date(110,10,10);
+	]]>
+	</zscript>
+	minDate=${date};
+	<datepicker minDate="${date}" />
+	
+		
+	numberOfMonths="2"
+	<datepicker numberOfMonths="2" />
+
+	<zscript><![CDATA[
+		int[] array = {2,2};
+	]]>
+	</zscript>
+	numberOfMonths=${array}
+	<datepicker numberOfMonths="${array}" />
+		
+	
+	numberOfMonths="2,2"
+	<datepicker numberOfMonths="2,2" />
+
+	 -->
+	 		
+	 
+	calculateWeek="function(){return 1;}"	 		
+	<datepicker showWeek="true" calculateWeek="function(){return 2;}" />
+	 
+	
+	<hbox>
+		<!--
+		
+		<button label='detach()' onClick='target.detach();' />
+		<button label='attach()' onClick='(new org.zkoss.jquery4j.jqueryui.datepicker.Datepicker()).setParent(win1);' />		
+		 
+		<button label='setDisabled(true)' onClick='target.setDisabled(true)'/>
+		<button label='setDisabled(false)' onClick='target.setDisabled(false)'/>
+
+		<button label='setAutoSize(true)' onClick='target.setAutoSize(true)'/>
+		<button label='setAutoSize(false)' onClick='target.setAutoSize(false)'/>
+
+		<button label='setButtonImageOnly(true)' onClick='target.setButtonImageOnly(true)'/>
+		<button label='setButtonImageOnly(false)' onClick='target.setButtonImageOnly(false)'/>
+ 		
+		<button label='setChangeMonth(true)' onClick='target.setChangeMonth(true)'/>
+		<button label='setChangeMonth(false)' onClick='target.setChangeMonth(false)'/>
+
+		<button label='setChangeYear(true)' onClick='target.setChangeYear(true)'/>
+		<button label='setChangeYear(false)' onClick='target.setChangeYear(false)'/>
+
+		<button label='setConstrainInput(true)' onClick='target.setConstrainInput(true)'/>
+		<button label='setConstrainInput(false)' onClick='target.setConstrainInput(false)'/>
+ 				
+		<button label='setGotoCurrent(true)' onClick='target.setGotoCurrent(true)'/>
+		<button label='setGotoCurrent(false)' onClick='target.setGotoCurrent(false)'/>
+
+	
+		<button label='setHideIfNoPrevNext(true), precondition' onClick='todo.....'/>
+		<button label='setHideIfNoPrevNext(true)' onClick='target.setHideIfNoPrevNext(true)'/>
+		<button label='setHideIfNoPrevNext(false)' onClick='target.setHideIfNoPrevNext(false)'/>
+		
+		<button label='setIsRTL(true)' onClick='target.setIsRTL(true)'/>
+		<button label='setIsRTL(false)' onClick='target.setIsRTL(false)'/>
+ 		
+ 		<button label='setNavigationAsDateFormat(true), precondition' onClick='target.setNextText("MM")'/>
+		<button label='setNavigationAsDateFormat(true)' onClick='target.setNavigationAsDateFormat(true)'/>
+		<button label='setNavigationAsDateFormat(false)' onClick='target.setNavigationAsDateFormat(false)'/>
+
+ 		<button label='setSelectOtherMonths(true), precondition' onClick='target.setShowOtherMonths(true)'/>
+		<button label='setSelectOtherMonths(true)' onClick='target.setSelectOtherMonths(true)'/>
+		<button label='setSelectOtherMonths(false)' onClick='target.setSelectOtherMonths(false)'/>
+
+		<button label='setShowButtonPanel(true)' onClick='target.setShowButtonPanel(true)'/>
+		<button label='setShowButtonPanel(false)' onClick='target.setShowButtonPanel(false)'/>			
+		
+		<button label='setShowMonthAfterYear(true)' onClick='target.setShowMonthAfterYear(true)'/>
+		<button label='setShowMonthAfterYear(false)' onClick='target.setShowMonthAfterYear(false)'/>			
+ 		
+		<button label='setShowOtherMonths(true)' onClick='target.setShowOtherMonths(true)'/>
+		<button label='setShowOtherMonths(false)' onClick='target.setShowOtherMonths(false)'/>			
+
+		<button label='setShowWeek(true)' onClick='target.setShowWeek(true)'/>
+		<button label='setShowWeek(false)' onClick='target.setShowWeek(false)'/>			
+		
+ 		
+	    <html>
+		    <![CDATA[    
+			<input type="text" id="actualDate2"></input>
+			]]>
+		</html>  	
+		<button label='setAltField("#actualDate2")' onClick='target.setAltField("#actualDate2")'/>
+		<button label='setAltFormat("dd/MM/yy")' onClick='target.setAltFormat("dd/MM/yy")'/>
+				
+		<button label='setAppendText("appendText")' onClick='target.setAppendText("appendText")'/>
+		
+		<button label='setButtonImage("todo..."),precondition' onClick='alert("todo")'/>
+		<button label='setButtonImage("todo...")' onClick='target.setButtonImage("todo...")'/>		
+		
+		<button label='setButtonText("buttontext"),precondition' onClick='target.setShowOn("button")'/>
+		<button label='setButtonText("buttontext")' onClick='target.setButtonText("buttontext")'/>
+		 					
+		<button label='setCloseText("closetext"),precondition' onClick='target.setShowButtonPanel(true)'/>
+		<button label='setCloseText("closetext")' onClick='target.setCloseText("closetext")'/>
+				
+		<button label='setCurrentText("currenttext"),precondition' onClick='target.setShowButtonPanel(true)'/>
+		<button label='setCurrentText("currenttext")' onClick='target.setCurrentText("currenttext")'/>
+		
+		<button label='setDateFormat("D, dd M yy")' onClick='target.setDateFormat("D, dd M yy")'/>
+				
+		<button label='setNextText("nextText")' onClick='target.setNextText("nextText")'/>
+				
+		<button label='setPrevText("prevText")' onClick='target.setPrevText("prevText")'/>
+		
+		<button label='setShowAnim("slideDown")' onClick='target.setShowAnim("slideDown")'/>
+		<button label='setShowAnim("fold")' onClick='target.setShowAnim("fold")'/>		
+		
+		<button label='setShowOn("both")' onClick='target.setShowOn("both")'/>		
+		
+		<button label='setWeekHeader("weekHeader"),precondition' onClick='target.setShowWeek(true)'/>
+		<button label='setWeekHeader("weekHeader")' onClick='target.setWeekHeader("weekHeader")'/>
+		
+		<button label='setYearRange("c-2:c+2"),precondition' onClick='target.setChangeYear(true)'/>
+		<button label='setYearRange("c-2:c+2")' onClick='target.setYearRange("c-2:c+2")'/>
+		
+		<button label='setYearSuffix("yearSuffix")' onClick='target.setYearSuffix("yearSuffix")'/>		
+				 
+		<button label='yearSuffix="yearSuffix"' onClick='target.setYearSuffix("yearSuffix")'/>
+		
+		<button label='setFirstDay(3)' onClick='target.setFirstDay(3)'/>
+					
+		<button label='setShowCurrentAtPos(3)' onClick='target.setShowCurrentAtPos(3)'/>		
+		<button label='setShowCurrentAtPos(-3)' onClick='target.setShowCurrentAtPos(-3)'/>
+				
+		<button label='setStepMonths(3)' onClick='target.setStepMonths(3)'/>		
+		<button label='setStepMonths(-3)' onClick='target.setStepMonths(-3)'/>
+		
+		<button label='setDayNames("A,B,C,D,E,F,G")' onClick='target.setDayNames("A,B,C,D,E,F,G")'/>
+		<button label="setDayNames(String[])">
+     		<attribute name="onClick"><![CDATA[
+				String[] dayNames={"AA","BB","CC","DD","EE","FF","GG"};
+				target.setDayNames(dayNames);
+			]]>
+			</attribute>    
+		</button>
+	
+		<button label='setDayNamesMin("A,B,C,D,E,F,G")' onClick='target.setDayNamesMin("A,B,C,D,E,F,G")'/>
+		<button label="setDayNamesMin(String[])">
+			<attribute name="onClick"><![CDATA[
+	                String[] dayNamesMin={"AA","BB","CC","DD","EE","FF","GG"};
+	                target.setDayNamesMin(dayNamesMin);
+	                ]]>
+			</attribute>    
+		</button>		
+		
+		<button label='setDateFormat("D, dd M yy")' onClick='target.setDateFormat("D, dd M yy")'/>			
+		<button label='setDayNamesShort("A,B,C,D,E,F,G")' onClick='target.setDayNamesShort("A,B,C,D,E,F,G")'/>
+		<button label="setDayNamesShort(String[])">
+			<attribute name="onClick"><![CDATA[
+				String[] dayNamesShort={"AA","BB","CC","DD","EE","FF","GG"};
+				target.setDayNamesShort(dayNamesShort);
+				]]>
+			</attribute>    
+		</button>
+						
+		<button label='setMonthNames("A,B,C,D,E,F,G,H,I,J,K,L")' onClick='target.setMonthNames("A,B,C,D,E,F,G,H,I,J,K,L")'/>
+		<button label="setMonthNames(String[])">
+			<attribute name="onClick"><![CDATA[
+				String[] monthNames={"AA","BB","CC","DD","EE","FF","GG","HH","II","JJ","KK","LL"};
+				target.setMonthNames(monthNames);
+				]]>
+			</attribute>    
+		</button>
+
+		
+		<button label='setDateFormat("D, dd M yy")' onClick='target.setDateFormat("D, dd M yy")'/>
+		<button label='setMonthNamesShort("A,B,C,D,E,F,G,H,I,J,K,L")' onClick='target.setMonthNamesShort("A,B,C,D,E,F,G,H,I,J,K,L")'/>
+		<button label="setMonthNamesShort(String[])">
+			<attribute name="onClick"><![CDATA[
+				String[] monthNamesShort={"AA","BB","CC","DD","EE","FF","GG","HH","II","JJ","KK","LL"};
+				target.setMonthNamesShort(monthNamesShort);
+				]]>
+			</attribute>    
+		</button>
+
+		<button label='setDuration("slow")' onClick='target.setDuration("slow")'/>
+		<button label='setDuration("fast")' onClick='target.setDuration("fast")'/>
+		<button label='setDuration(2000)' onClick='target.setDuration(2000)'/>
+
+		
+		<button label='setDefaultDate("02/02/2010")' onClick='target.setDefaultDate("02/02/2010")'/>
+		<button label='setDefaultDate("+1m +7d")' onClick='target.setDefaultDate("+1m +7d")'/>
+		<button label='setDefaultDate("+7")' onClick='target.setDefaultDate("+7")'/>
+		<button label='setDefaultDate("7")' onClick='target.setDefaultDate("7")'/>
+		<button label='setDefaultDate("-7")' onClick='target.setDefaultDate("-7")'/>
+		<button label="setDefaultDate(date)">
+			<attribute name="onClick"><![CDATA[
+				date = new Date(2010,7,1);
+				target.setDefaultDate(date);
+				]]>
+			</attribute>    
+		</button>
+					
+		<button label='setMaxDate("02/02/2010")' onClick='target.setMaxDate("02/02/2010")'/>
+		<button label='setMaxDate("+1m +7d")' onClick='target.setMaxDate("+1m +7d")'/>
+		<button label='setMaxDate("+7")' onClick='target.setMaxDate("+7")'/>
+		<button label='setMaxDate("7")' onClick='target.setMaxDate("7")'/>
+		<button label='setMaxDate("-7")' onClick='target.setMaxDate("-7")'/>
+		<button label="setMaxDate(date)">
+			<attribute name="onClick"><![CDATA[
+				date = new Date(110,6,1);
+				target.setMaxDate(date);
+				]]>
+			</attribute>    
+		</button>			
+		
+		
+		<button label='setMinDate("02/02/2010")' onClick='target.setMinDate("02/02/2010")'/>
+		<button label='setMinDate("+1m +7d")' onClick='target.setMinDate("+1m +7d")'/>
+		<button label='setMinDate("+7")' onClick='target.setMinDate("+7")'/>
+		<button label='setMinDate("7")' onClick='target.setMinDate("7")'/>
+		<button label='setMinDate("-7")' onClick='target.setMinDate("-7")'/>
+		<button label="setMinDate(date)">
+			<attribute name="onClick"><![CDATA[
+				date = new Date(110,6,1);
+				target.setMinDate(date);
+				]]>
+			</attribute>    
+		</button>		
+		-->
+		
+		<button label='setNumberOfMonths(2)' onClick='target.setNumberOfMonths(2)'/>
+		 
+		<button label="setNumberOfMonths(date)">
+			<attribute name="onClick"><![CDATA[
+				int[] array = {2,2};
+				target.setNumberOfMonths(array);
+				]]>
+			</attribute>    
+		</button>		
+					
+	</hbox>
+
+</window>
+</zk>

@@ -1,0 +1,87 @@
+<?page title="accordion" contentType="text/html;charset=UTF-8"?>
+<zk>
+<window id="win1" title="test jqueryui accordion" border="normal" apply="jqueryuitest.AccordionController">
+
+target: 
+<accordion id="target"/>
+
+<!--   
+disabled="true"
+<accordion disabled="true"/>
+
+autoHeight="false"
+<accordion autoHeight="false"/>
+
+clearStyle="true"
+<accordion clearStyle="true"/>
+
+collapsible="true"
+<accordion collapsible="true"/>
+
+navigation="true"
+<accordion navigation="true"/>
+
+animated="false"
+<accordion animated="false"/>
+
+animated="bounceslide"
+<accordion animated="bounceslide"/>
+
+event="mouseover"
+<accordion event="mouseover"/>
+
+fillSpace="true"
+<accordion fillSpace="true"/>
+-->
+
+active="1"
+<accordion active="1"/>
+active="2"
+<accordion active="2"/>
+active="false"
+<accordion active="false" collapsible="true"/>
+
+<hbox>
+	<!--
+	<button label='detach()' onClick='target.detach();' />
+	-->
+	<button label="setModel(date)">
+		<attribute name="onClick"><![CDATA[
+			import org.zkoss.jquery4j.jqueryui.accordion.AccordionModel;
+		    
+			String[][] model = {{"t1","c1"},{"t2","c2"},{"t3","<ul><li>List item one</li><li>List item two</li><li>List item three</li></ul>"}};
+			AccordionModel am = new AccordionModel(model);
+			target.setModel(am);
+			]]>
+		</attribute>    
+	</button>		
+	 
+	<!-- 
+	<button label='setDisabled(true)' onClick='target.setDisabled(true);' />
+	<button label='setDisabled(false)' onClick='target.setDisabled(false);' />
+		
+	<button label='setAutoHeight(true)' onClick='target.setAutoHeight(true);' />
+	<button label='setAutoHeight(false)' onClick='target.setAutoHeight(false);' />
+	
+	<button label='setClearStyle(true)' onClick='target.setClearStyle(true);' />
+	<button label='setClearStyle(false)' onClick='target.setClearStyle(false);' />
+	
+	<button label='setCollapsible(true)' onClick='target.setCollapsible(true);' />
+	<button label='setCollapsible(false)' onClick='target.setCollapsible(false);' />
+	
+	<button label='setNavigation(true)' onClick='target.setNavigation(true);' />
+	<button label='setNavigation(false)' onClick='target.setNavigation(false);' />
+		
+	
+	<button label='setAnimated(false)' onClick='target.setAnimated(false);' />
+	<button label='setAnimated("bounceslide")' onClick='target.setAnimated("bounceslide");' />
+
+	<button label='setFillSpace(false)' onClick='target.setFillSpace(false);' />
+	<button label='setFillSpace(true)' onClick='target.setFillSpace(true);' />
+
+	-->	
+</hbox>
+
+
+</window>
+</zk>

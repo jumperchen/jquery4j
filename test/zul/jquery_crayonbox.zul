@@ -1,0 +1,12 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<window title="new page title" border="normal">
+
+<crayonbox id="comp1"></crayonbox>
+
+<button label="crayonbox" onClick='alert(comp1.getSelected())'/>
+
+</window>
+</zk>
