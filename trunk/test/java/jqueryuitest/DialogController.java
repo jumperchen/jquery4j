@@ -1,17 +1,16 @@
 package jqueryuitest;
 
 import org.zkoss.jquery4j.jqueryui.dialog.Dialog;
-import org.zkoss.jquery4j.jqueryui.progressbar.Progressbar;
-import org.zkoss.jquery4j.jqueryui.progressbar.events.ChangedEvent;
+import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 
 public class DialogController extends GenericForwardComposer {
 	
 	
-	Dialog comp1;
+	Dialog target;
 	
-	public void onProgressbarChange$comp1(ChangedEvent e) {
-		System.out.println("Dialog value changed : "+ e.getValue());
+	public void onXXX$target(Event e) {
+		System.out.println("Dialog value changed : "+ e);
 	}
 	
 }
