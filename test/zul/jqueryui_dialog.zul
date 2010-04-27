@@ -2,29 +2,159 @@
 
 <zk>
 
-<window id="win1" title="test jqueryui dialog" border="normal" apply="jqueryuitest.ProgressbarController">
+<window id="win1" title="test jqueryui dialog" border="normal" apply="jqueryuitest.DialogController">
+	<!-- 
+	default:
+	<dialog/>
 
-	<dialog id="comp1" content="hello world" title="title1"/>
+	
+	
+	target:
+	<dialog id="target" content="hello world" title="title1"/>
+	-->
+	<!--  	
+	disabled="true"
+	<dialog id="target" disabled="true" content="hello world" title="title1" />
 
-	<hbox>
-		<!--
+	autoOpen="false"
+	<dialog id="target" autoOpen="false" content="hello world" title="title1" />
+		
+	closeOnEscape="false"
+	<dialog id="target" closeOnEscape="false" content="hello world" title="title1" />
+	
+	draggable="false"
+	<dialog id="target" draggable="false" content="hello world" title="title1" />
+	
+	modal="true"
+	<dialog id="target" modal="true" content="hello world" title="title1" />
+
+	resizable="false"
+	<dialog id="target" resizable="false" content="hello world" title="title1" />
+
+	stack="false"
+	<dialog id="target" stack="true" content="hello world" title="title1" />
+	<dialog id="target2" stack="false" content="hello world2" title="title2" />
+
+	closeText="ccc"
+	<dialog closeText="ccc" id="target" content="hello world" title="title1" />
+		
+	dialogClass="ccc"
+	<dialog dialogClass="ccc" id="target" content="hello world" title="title1" />
+	
+	hide="fold"
+	<dialog hide="fold" id="target" content="hello world" title="title1" />
 		 
-		<button label="getValue" onClick="alert(comp1.value)"/>
+	show="fold"
+	<dialog show="fold" id="target" content="hello world" title="title1" />		
+
+	minHeight="250"
+	<dialog minHeight="250" id="target" content="hello world" title="title1" />
+
+	minWidth="250"
+	<dialog minWidth="250" id="target" content="hello world" title="title1" />
+			
+	width="400"
+	<dialog width="400" id="target" content="hello world" title="title1" />
 		
-		<button label="setvalue to 30" onClick="comp1.setValue(30)"/>
+	zIndex="200"
+	<dialog zIndex="200" id="target" content="hello world" title="title1" />
+
+	height="450"
+	<dialog height="450" id="target" content="hello world" title="title1" />
+
+	maxHeight="450"
+	<dialog maxHeight="450" id="target" content="hello world" title="title1" />
 		
-		<button label="setvalue random in server" onClick="setProgress();" />
+	maxWidth="450"
+	<dialog maxWidth="450" id="target" content="hello world" title="title1" />
+
+	position="left"
+	<dialog position="left"  content="hello world" title='position="left"' />
+	position="left,bottom"
+	<dialog position="left,bottom"  content="hello world" title='position="left,bottom"' />
+	position="500,300"
+	<dialog position="500,300"  content="hello world" title='position="500,300"' />
+
+	<zscript><![CDATA[
+		int[] position = {600,500}; 
+	]]>
+	</zscript>
+	position=${position}
+	<dialog position="${position}"  content="hello world" title='position="600,500"' />
+	-->		
+	buttons={}
+	<dialog buttons='{ buttons: { "Ok": function() { $(this).dialog("close"); } } }' id="target" content="buttons=" title="title1" />
+	<hbox>			
 		
-		<button label="setvalue in client" xmlns:w="http://www.zkoss.org/2005/zk/client" w:onClick="this.$f('comp1').setValue(20);"/>
+		<button label='setOpen(true)' onClick='target.setOpen(true)' />
+		<button label='setOpen(false)' onClick='target.setOpen(false)' />
+		<!-- 
+		<button label='setDisabled(true)' onClick='target.setDisabled(true);' />		
+		<button label='setDisabled(false);' onClick='target.setDisabled(false);' />		
+		<button label='detach()' onClick='target.detach();' />				
+		<button label='setParent(win1)' onClick='target.setParent(win1);' />		
 		
-		<button label="disable()" onClick="comp1.setDisabled(true);" />
+		<button label='setContent("new content")' onClick='target.setContent("new content")' />
 		
-		<button label="enable()" onClick="comp1.setDisabled(false);" />
+		<button label='setDisabled(true)' onClick='target.setDisabled(true)' />
+		<button label='setDisabled(false)' onClick='target.setDisabled(false)' />
+				
+		<button label='setAutoOpen(true)' onClick='target.setAutoOpen(true)' />
+		<button label='setAutoOpen(false)' onClick='target.setAutoOpen(false)' />
+
+		<button label='setCloseOnEscape(true)' onClick='target.setCloseOnEscape(true)' />
+		<button label='setCloseOnEscape(false)' onClick='target.setCloseOnEscape(false)' />
 		
-		<button label="detach()" onClick="comp1.detach();" />		
+		<button label='setDraggable(true)' onClick='target.setDraggable(true)' />
+		<button label='setDraggable(false)' onClick='target.setDraggable(false)' />
 		
-		<button label="attach()" onClick="comp1.setParent(win1);" />
-		 -->
+		<button label='setModal(true)' onClick='target.setModal(true)' />
+		<button label='setModal(false)' onClick='target.setModal(false)' />
+		
+		<button label='setResizable(true)' onClick='target.setResizable(true)' />
+		<button label='setResizable(false)' onClick='target.setResizable(false)' />
+				
+		<button label='setStack(true)' onClick='target.setStack(true)' />
+		<button label='setStack(false)' onClick='target.setStack(false)' />
+
+		<button label='setCloseText("button")' onClick='target.setCloseText("button")' />
+					
+		<button label='setDialogClass("button")' onClick='target.setDialogClass("button")' />
+		
+		<button label='setHide("slide")' onClick='target.setHide("slide")' />
+		
+		<button label='setShow("slide")' onClick='target.setShow("slide")' />
+		
+		<button label='setTitle("new title")' onClick='target.setTitle("new title")' />
+	
+		<button label='setMinHeight(300)' onClick='target.setMinHeight(300)' />
+				
+		<button label='setMinWidth(300)' onClick='target.setMinWidth(300)' />
+				
+		<button label='setWidth(500)' onClick='target.setWidth(500)' />
+				
+		<button label='setZIndex(300)' onClick='target.setZIndex(300)' />
+		
+		
+		<button label='setHeight(550)' onClick='target.setHeight(550)' />
+		<button label='setHeight("auto")' onClick='target.setHeight("auto")' />
+
+		<button label='setMaxHeight(550)' onClick='target.setMaxHeight(550)' />
+		<button label='setMaxHeight(false)' onClick='target.setMaxHeight(false)' />
+		<button label='setMaxWidth(550)' onClick='target.setMaxWidth(550)' />
+		<button label='setMaxWidth(false)' onClick='target.setMaxWidth(false)' />
+		-->		
+		
+		<button label='setPosition("right")' onClick='target.setPosition("right")' />
+		<button label='setPosition("100,200")' onClick='target.setPosition("100,200")' />
+		<button label='setPosition("right,top")' onClick='target.setPosition("right,top")' />		
+		<button label="setPosition()">
+			<attribute name="onClick"><![CDATA[
+				int[] position = {500,500};
+				target.setPosition(position);
+				]]>
+			</attribute>    
+		</button>	
 	</hbox>
 </window>
 </zk>
