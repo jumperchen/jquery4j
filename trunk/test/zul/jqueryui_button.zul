@@ -1,0 +1,20 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<window title="new page title" border="normal">
+
+ 
+<jqbutton id="comp1" label="default" onClick='alert("get clicked event")'/>
+
+<jqbutton id="comp3" label="checkbox" childLabels="aaa,bbb,ccc" type="checkbox" onClick='alert("2 get clicked event")'/>
+
+<jqbutton id="comp2" label="radio" childLabels="radio,radio" type="radio" />
+
+<jqbutton id="comp4"  onClick='alert("get clicked event")' width="100px" height="100px"/>
+
+<button label="jq button" />
+
+</window>
+</zk>
+

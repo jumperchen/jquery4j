@@ -1,0 +1,46 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window id="win1" title="test jqueryui progressbar" border="normal" apply="jqueryuitest.ProgressbarController">
+  		  
+	<progressbar id="comp1" value="20"/>
+	
+	<progressbar id="comp2"/>
+	
+	<progressbar id="comp3" width="300px" height="100px" value="40"/>
+	
+	<progressbar id="comp4" width="300px" height="30px" value="50" disabled="true"/>
+	
+	<hbox>
+		<button label="getValue" onClick="alert(comp1.value)"/>
+		
+		<button label="setvalue to 30" onClick="comp1.setValue(30)"/>
+		
+		<button label="setvalue random in server" onClick="setProgress();" />
+		
+		<button label="setvalue in client" xmlns:w="http://www.zkoss.org/2005/zk/client" w:onClick="this.$f('comp1').setValue(20);"/>
+		
+		<button label="disable()" onClick="comp1.setDisabled(true);" />
+		
+		<button label="enable()" onClick="comp1.setDisabled(false);" />
+		
+		<button label="detach()" onClick="comp1.detach();" />
+		
+		<!-- 
+		<button label="attach()" onClick="comp1.setParent(win1);" />
+		 -->
+	</hbox>
+
+	<zscript><![CDATA[	
+		import java.util.Random;
+		
+		public void setProgress() {
+			Random random = new Random();
+			
+			comp1.setValue((random.nextInt(99) + 1));
+		}
+	]]>
+	</zscript>
+	
+</window>
+</zk>

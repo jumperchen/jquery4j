@@ -1,0 +1,14 @@
+<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+
+<zk>
+
+<window title="new page title" border="normal">
+
+<autocomplete id="comp1" availableTags="aaa,bbb,ccc"/>
+
+<autocomplete id="comp2" />
+
+<button label="autocomplete" onClick='alert(comp1.getSelected())'/>
+
+</window>
+</zk>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<language-addon>
+	
+	<stylesheet href="~./js/jquery4j/jquery/ext/crayonbox/jquery.crayonbox.css" type="text/css" />
+	<stylesheet href="~./js/jquery4j/jquery/ext/calculator/jquery.calculator.css" type="text/css" />
+	
+	<stylesheet href="~./js/jquery4j/jqueryui/ext/css/smoothness/jquery-ui-1.8.custom.css" type="text/css" /> 
+	  
+	
+	<addon-name>jqueryui</addon-name>
+	<language-name>xul/html</language-name>
+	
+	<component>
+		<component-name>progressbar</component-name>  
+		<component-class>org.zkoss.jquery4j.jqueryui.progressbar.Progressbar</component-class>
+		<widget-class>jquery4j.jqueryui.Progressbar</widget-class>
+	</component>
+
+	<component>
+		<component-name>jqslider</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.slider.Slider</component-class>
+		<widget-class>jquery4j.jqueryui.Slider</widget-class>
+	</component>
+	
+	<component>
+		<component-name>datepicker</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.datepicker.Datepicker</component-class>
+		<widget-class>jquery4j.jqueryui.Datepicker</widget-class>
+	</component>
+
+	<component>
+		<component-name>dialog</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.dialog.Dialog</component-class>
+		<widget-class>jquery4j.jqueryui.Dialog</widget-class>
+	</component>
+
+	<component>
+		<component-name>jqbutton</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.button.Button</component-class>
+		<widget-class>jquery4j.jqueryui.Button</widget-class>
+	</component>
+
+	<component>
+		<component-name>autocomplete</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.autocomplete.Autocomplete</component-class>
+		<widget-class>jquery4j.jqueryui.Autocomplete</widget-class>
+	</component>
+	
+	<component>
+		<component-name>accordion</component-name> 
+		<component-class>org.zkoss.jquery4j.jqueryui.accordion.Accordion</component-class>
+		<widget-class>jquery4j.jqueryui.Accordion</widget-class>
+	</component>
+
+	
+	
+	<component> 
+		<component-name>crayonbox</component-name> 
+		<component-class>org.zkoss.jquery4j.jquery.Crayonbox</component-class>
+		<widget-class>jquery4j.jquery.Crayonbox</widget-class>
+	</component>
+
+	<component> 
+		<component-name>calculator</component-name> 
+		<component-class>org.zkoss.jquery4j.jquery.Calculator</component-class>
+		<widget-class>jquery4j.jquery.Calculator</widget-class>
+	</component>
+	
+</language-addon>

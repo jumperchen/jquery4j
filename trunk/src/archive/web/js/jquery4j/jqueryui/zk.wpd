@@ -1,0 +1,13 @@
+<package name="jquery4j.jqueryui" language="xul/html" depends="zul">
+	 
+	<script src="ext/jquery-ui-1.8.custom.js"/>	
+	 	
+	<widget name="Accordion"/>
+	<widget name="Autocomplete"/>
+	<widget name="Button"/>
+	<widget name="Datepicker"/>
+	<widget name="Dialog"/>
+	<widget name="Progressbar"/>
+	<widget name="Slider"/>
+		
+</package>

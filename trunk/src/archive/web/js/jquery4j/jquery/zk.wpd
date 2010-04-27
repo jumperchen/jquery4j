@@ -1,0 +1,7 @@
+<package name="jquery4j.jquery" language="xul/html" depends="zul">
+	<script src="ext/crayonbox/jquery.crayonbox.js"/>
+	<script src="ext/calculator/jquery.calculator.js"/>
+	 		 	
+	<widget name="Crayonbox"/>
+	<widget name="Calculator"/>
+</package>
