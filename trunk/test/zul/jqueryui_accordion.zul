@@ -2,36 +2,46 @@
 <zk>
 <window id="win1" title="test jqueryui accordion" border="normal" apply="jqueryuitest.AccordionController">
 
+<zscript>
+<![CDATA[
+	import org.zkoss.jquery4j.jqueryui.accordion.AccordionModel;
+    
+	String[][] model = {{"t1","c1"},{"t2","c2"}};
+	AccordionModel tm = new AccordionModel(model);
+	target.setModel(tm);
+	]]>
+</zscript>
+
 target: 
-<accordion id="target"/>
+<accordion id="target" model="${tm}"/>
 
 <!--   
 disabled="true"
-<accordion disabled="true"/>
+<accordion disabled="true" model="${tm}"/>
 
 autoHeight="false"
-<accordion autoHeight="false"/>
+<accordion autoHeight="false" model="${tm}"/>
 
 clearStyle="true"
-<accordion clearStyle="true"/>
+<accordion clearStyle="true" model="${tm}"/>
 
 collapsible="true"
-<accordion collapsible="true"/>
+<accordion collapsible="true" model="${tm}"/>
 
 navigation="true"
-<accordion navigation="true"/>
+<accordion navigation="true" model="${tm}"/>
 
 animated="false"
-<accordion animated="false"/>
+<accordion animated="false" model="${tm}"/>
 
 animated="bounceslide"
-<accordion animated="bounceslide"/>
+<accordion animated="bounceslide" model="${tm}"/>
 
 event="mouseover"
-<accordion event="mouseover"/>
+<accordion event="mouseover" model="${tm}"/>
 
 fillSpace="true"
-<accordion fillSpace="true"/>
+<accordion fillSpace="true" model="${tm}"/>
 -->
 
 active="1"
