@@ -59,6 +59,10 @@ public class Mix {
 			}
 			_type = Type.ARRAY;
 			_modified = true;						
+		} else if(value instanceof Boolean){
+			_boolean = (Boolean)value;
+			_type = Type.BOOLEAN;
+			_modified = true;			
 		} else if (value instanceof String) {
 			// "+7" goes to string, "2" goes to String . Should parse to int before here???? 
 			try{

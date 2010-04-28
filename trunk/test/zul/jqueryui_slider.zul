@@ -7,81 +7,86 @@
 	default:
 	<jqslider/>
 	
-	target:
-	<jqslider id="comp1" values="30,40" />
+	target: values="30,40"
+	<jqslider id="target" values="30,40" />
 
 	<!-- 		
-	<jqslider id="comp2" value="26" min="20" max="30"/>
-	
-	<jqslider id="comp3" value="26" disabled="true"/>
-	
-	<jqslider id="comp4" value="46" orientation="vertical"/>
+	min="20" max="30" value="26" 
+	<jqslider min="20" max="30" value="26" />
+	disabled="true" value="26" 
+	<jqslider disabled="true" value="26" />
+	orientation="vertical" value="46" 
+	<jqslider orientation="vertical" value="46" />
 
-	-->	 	
-	range="true"
-	<jqslider id="comp5" value="56" range="true"/>
 	
-	<!--	
-	range="min"
-	<jqslider id="comp6" value="66" range="min"/>	 
+	range="true" value="56" 
+	<jqslider range="true" value="56" />
 	
-	<jqslider id="comp7" values="1,5,7,9"/>
+		
+	range="min" value="66" 
+	<jqslider range="min" value="66" />	 
 	
-	<jqslider id="comp8" range="true" values="50,70"/>
+	values="1,5,7,9"
+	<jqslider values="1,5,7,9"/>
 	
-	<jqslider id="comp9" value="33" animate="true"/>
-	
-	<jqslider id="comp10" value="33" animate="fast"/>
-	
-	<jqslider id="comp11" value="33" animate="1000"/>
-
-	<jqslider id="comp5" value="46" orientation="vert"/>
-	 -->
-	
+	range="true" values="50,70"
+	<jqslider range="true" values="50,70"/>
+	-->
+	animate="true" value="33" 
+	<jqslider animate="true" value="33" />
+	animate="fast" value="33" 
+	<jqslider animate="fast" value="33"/>
+	animate="1000" value="33" 
+	<jqslider animate="1000" value="33" />
+	<!-- 
+	orientation="vert" value="46"
+	<jqslider orientation="vert" value="46"/>
+	 
+	-->
 	<hbox>
-	
-		<button label="setRange(false)" onClick="comp1.setRange(false)"/>
+		<!-- 
+		<button label="setRange(false)" onClick="target.setRange(false)"/>
 		
-		<button label="setRange(true)" onClick="comp1.setRange(true)"/>
+		<button label="setRange(true)" onClick="target.setRange(true)"/>
 		
-		<button label='setValues("30,50")' onClick='comp1.setValues("30,50")'/>
-
-		<button label="setAnimate(false)" onClick="comp1.setAnimate(false)"/>
+		<button label='setValues("30,50")' onClick='target.setValues("30,50")'/>
+		-->
+		<button label="setAnimate(false)" onClick="target.setAnimate(false)"/>
 		
-		<button label="setAnimate(true)" onClick="comp1.setAnimate(true)"/>
-			
-		<button label="getValue" onClick="alert(comp1.value)"/>
+		<button label="setAnimate(true)" onClick="target.setAnimate(true)"/>
+		<!-- 			
+		<button label="getValue" onClick="alert(target.value)"/>
 		
-		<button label="setvalue to 30" onClick="comp1.setValue(30)"/>
+		<button label="setvalue to 30" onClick="target.setValue(30)"/>
 		
 		<button label="setvalue random in server" onClick="setProgress();" />
 		
-		<button label="setvalue in client" xmlns:w="http://www.zkoss.org/2005/zk/client" w:onClick="this.$f('comp1').setValue(20);"/>
+		<button label="setvalue in client" xmlns:w="http://www.zkoss.org/2005/zk/client" w:onClick="this.$f('target').setValue(20);"/>
 		
-		<button label="disable" onClick="comp1.setDisabled(true);" />
+		<button label="disable" onClick="target.setDisabled(true);" />
 		
-		<button label="enable" onClick="comp1.setDisabled(false);" />
+		<button label="enable" onClick="target.setDisabled(false);" />
 		
-		<button label="max 30" onClick="comp1.setMax(30);" />
+		<button label="max 30" onClick="target.setMax(30);" />
 		
-		<button label="min 10" onClick="comp1.setMin(10);" />
+		<button label="min 10" onClick="target.setMin(10);" />
 		
-		<button label="min 50" onClick="comp1.setMin(50);" />
+		<button label="min 50" onClick="target.setMin(50);" />
 		
-		<button label="step 3" onClick="comp1.setStep(3);" />
+		<button label="step 3" onClick="target.setStep(3);" />
 		
-		<button label="veritcal" onClick='comp1.setOrientation("vertical");' />
+		<button label="veritcal" onClick='target.setOrientation("vertical");' />
 		
-		<button label="horizontal" onClick='comp1.setOrientation("horizontal");' />
+		<button label="horizontal" onClick='target.setOrientation("horizontal");' />
 		
-		<button label="detach" onClick="comp1.detach();" />
+		<button label="detach" onClick="target.detach();" />
 		
 		<button label="getrange boolean" onClick='alert(comp5.getRange());' />
 		
 		<button label="getrange string" onClick='alert(comp6.getRange());' />
 		
-		<!-- 
-		<button label="attach" onClick="comp1.setParent(win1);" />
+
+		<button label="attach" onClick="target.setParent(win1);" />
 		 -->
 	</hbox>
 
@@ -91,7 +96,7 @@
 		public void setProgress() {
 			Random random = new Random();
 			
-			comp1.setValue((random.nextInt(99) + 1));
+			target.setValue((random.nextInt(99) + 1));
 		}
 	]]>
 	</zscript>
