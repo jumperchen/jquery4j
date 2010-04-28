@@ -17,6 +17,7 @@ Copyright (C) 2006 Potix Corporation. All Rights Reserved.
 
 package org.zkoss.jquery4j.jqueryui.slider;
 
+import org.zkoss.jquery4j.jqueryui.parameter.Mix;
 import org.zkoss.jquery4j.jqueryui.slider.events.ChangedEvent;
 import org.zkoss.jquery4j.jqueryui.slider.events.SlideEvent;
 import org.zkoss.jquery4j.jqueryui.slider.events.StartEvent;
@@ -35,10 +36,11 @@ public class Slider extends XulElement {
 	private int _min = 0;
 	private int _step = 1;
 	private String _orientation = "horizontal";//horizontal, vertical
-	private MixedRange _range;
+	private Mix _range = new Mix(false);	
+	private Mix _animate = new Mix(false);
+	
 	private int[] _values = {};
-	private MixedAnimate _animate;
-
+	
 	private class SliderEvents {
 		public static final String ON_START = "onSlideStart";
 		public static final String ON_SLIDE = "onSlide";
@@ -51,6 +53,32 @@ public class Slider extends XulElement {
 		addClientEvent(Slider.class, SliderEvents.ON_SLIDE, CE_IMPORTANT);
 		addClientEvent(Slider.class, SliderEvents.ON_CHANGE, CE_IMPORTANT|CE_REPEAT_IGNORE);
 		addClientEvent(Slider.class, SliderEvents.ON_STOP, CE_IMPORTANT|CE_REPEAT_IGNORE);
+	}
+	
+	public Object getAnimate() {
+		if(_animate != null){
+			return _animate.getValue();
+		}
+		return null;
+	}
+	
+	public void setAnimate(Object animate){
+		if(_animate == null) _animate = new Mix(false);
+		_animate.setValue(animate);
+		smartUpdate("animate", _animate.getValue());
+	}
+	
+	public Object getRange() {
+		if(_range != null){
+			return _range.getValue();
+		}
+		return null;
+	}
+	
+	public void setRange(Object range){
+		if(_range == null) _range = new Mix(false);
+		_range.setValue(range);
+		smartUpdate("range", _range.getValue());
 	}
 	
 	public int[] getValues(){
@@ -82,125 +110,7 @@ public class Slider extends XulElement {
 	public enum Type {
 		BOOLEAN,STRING,NUMBER
 	}
-	
-	//TODO: adapt to Mix.java
-	private class MixedRange{
-		boolean _rangeBoolean = false;		
-		String _rangeString = null;
-		boolean _modified = false;
-		Type _type = Type.BOOLEAN;
 		
-		public void setRange(Object range){
-			if(range instanceof String){
-				if(range.equals("true")||range.equals("false")){
-					_rangeBoolean = range.equals("true");		
-					_type = Type.BOOLEAN;
-					_modified = true;
-				}else if(range.equals("min")||range.equals("max")){
-					_rangeString = (String)range;
-					_type = Type.STRING;
-					_modified = true;					
-				}
-			}else if(range instanceof Boolean){
-				_rangeBoolean = (Boolean)range;
-				_type = Type.BOOLEAN;
-				_modified = true;				
-			}
-		}
-				
-		public Object getRange(){
-			switch(_type){
-				case BOOLEAN:
-					return _rangeBoolean;
-				case STRING:
-					return _rangeString;
-			}
-			return _rangeBoolean;
-		}
-		
-		public boolean isModified(){
-			return _modified; 
-		}
-	}
-
-	//TODO: adapt to Mix.java
-	private class MixedAnimate{
-		boolean _animateBoolean = false;
-		String _animateString = null;
-		int _animateNumber = 0;
-		boolean _modified = false;
-		Type _type = Type.BOOLEAN;
-		
-		public void setAnimate(Object animate){
-			if(animate instanceof String){
-				if(animate.equals("true")||animate.equals("true")){
-					_animateBoolean = animate.equals("true");
-					_type = Type.BOOLEAN;
-					_modified = true;
-				}else if(animate.equals("slow")||animate.equals("normal")||animate.equals("fast")){
-					_animateString = (String)animate;
-					_type = Type.STRING;
-					_modified = true;
-				}else {
-					_animateNumber = Integer.parseInt((String)animate);
-					_type = Type.NUMBER;
-					_modified = true;					
-				}
-			}else if(animate instanceof Boolean){
-				_animateBoolean = (Boolean) animate;
-				_type = Type.BOOLEAN;
-				_modified = true;
-			}else if(animate instanceof Integer){
-				_animateNumber = (Integer)animate;
-				_type = Type.NUMBER;
-				_modified = true;				
-			}
-		}
-		
-		public Object getAnimate(){
-			switch(_type){
-				case BOOLEAN :
-					return _animateBoolean;
-				case NUMBER:
-					return _animateNumber;
-				case STRING:
-					return _animateString;
-			}
-			return _animateBoolean;
-		}
-		
-		public boolean isModified(){
-			return _modified; 
-		}		
-	}
-
-	public Object getAnimate() {
-		if(_animate != null){
-			return _animate.getAnimate();
-		}
-		return false;
-	}
-
-	public void setAnimate(Object animate){
-		if(_animate == null) _animate = new MixedAnimate();
-		_animate.setAnimate(animate);
-		smartUpdate("animate", _animate.getAnimate());
-	}
-
-
-	public Object getRange() {
-		if(_range != null){
-			return _range.getRange();
-		}
-		return false;
-	}
-
-	public void setRange(Object range){
-		if(_range == null) _range = new MixedRange();
-		_range.setRange(range);
-		smartUpdate("range", _range.getRange());
-	}
-	
 	public String getOrientation(){
 		return _orientation;
 	}
@@ -314,11 +224,10 @@ public class Slider extends XulElement {
 			render(renderer, "disabled", _disabled);		
 
 		if(_range != null && _range.isModified()){				
-			render(renderer, "range", _range.getRange());
+			render(renderer, "range", _range.getValue());
 		}
-
 		if(_animate != null && _animate.isModified()){				
-			render(renderer, "animate", _animate.getAnimate());
+			render(renderer, "animate", _animate.getValue());
 		}
 		
 		if(_value != 0)

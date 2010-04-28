@@ -27,7 +27,12 @@ import org.zkoss.zk.ui.event.SelectionEvent;
 import org.zkoss.zul.impl.XulElement;
 
 public class Datepicker extends XulElement {
-		
+	
+	//TODO: client should report Date object back to server, not String.
+	//It may be affected by date format
+	//user report back date in String
+	private String _date="";
+	
 	private boolean _disabled = false;	
 	private boolean _autoSize = false;		
 	private boolean _buttonImageOnly = false;
@@ -86,9 +91,6 @@ public class Datepicker extends XulElement {
 	private Mix _minDate = new Mix();
 	private Mix _numberOfMonths = new Mix(1);
 	
-
-	
-	
 	private String _calculateWeek = "";
 	
 	public String getCalculateWeek() {
@@ -102,13 +104,9 @@ public class Datepicker extends XulElement {
 			smartUpdate("calculateWeek", _calculateWeek);
 		}
 	}
-	
-	
-
-	
-	String _date="";
-	
 		
+	//TODO. Don't use ON_SELECTION Event.
+	//Modify to use customized Event (DateSelectEvent)
 	static {
 		addClientEvent(Datepicker.class, Events.ON_SELECTION, CE_IMPORTANT|CE_REPEAT_IGNORE);		
 	}
@@ -844,9 +842,10 @@ public class Datepicker extends XulElement {
 	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
 		final String cmd = request.getCommand();
 		if (cmd.equals(Events.ON_SELECTION)) {
+			//TODO: modify according to Date object
 			SelectionEvent evt = SelectionEvent.getSelectionEvent(request);
 			_date = evt.getSelectedText(); 
-					
+				
 			Events.postEvent(evt);			
 		} else
 			super.service(request, everError);
