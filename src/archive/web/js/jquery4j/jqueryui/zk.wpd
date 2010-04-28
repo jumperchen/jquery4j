@@ -9,5 +9,6 @@
 	<widget name="Dialog"/>
 	<widget name="Progressbar"/>
 	<widget name="Slider"/>
-		
+	<widget name="Tabs"/>
+			
 </package>

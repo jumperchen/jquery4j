@@ -239,7 +239,7 @@ public class Accordion extends XulElement {
 		
 		if (cmd.equals(AccordionEvents.ON_CHANGE)) {
 			ChangedEvent evt = ChangedEvent.getChangedEvent(request);
-			System.out.println("name of new title: " + evt.getTitle());
+			//System.out.println("name of new title: " + evt.getTitle());
 			String title = evt.getTitle();
 			//TODO: update value, and decide whether to postEvent
 //			if(title != _title ){

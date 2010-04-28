@@ -1,0 +1,119 @@
+<?page title="tabs" contentType="text/html;charset=UTF-8"?>
+<zk>
+
+<window id="win1" title="test jqueryui tabs" border="normal" apply="jqueryuitest.TabsController">
+
+<zscript><![CDATA[
+	import org.zkoss.jquery4j.jqueryui.tabs.TabsModel;	   
+	String[][] model = {{"t1","c1"},{"t2","c2"},{"t3","c3"},{"t4","c4"}};
+	TabsModel tm = new TabsModel(model);	
+	]]>
+</zscript>
+<!--   
+target: 
+<tabs id="target" model="${tm}"/>
+
+disabled="true"
+<tabs disabled="true" id="target" model="${tm}"/>
+ 
+cache="true"
+<tabs cache="true" id="target" model="${tm}"/>
+
+collapsible="true"
+<tabs collapsible="true" id="target" model="${tm}"/>
+
+deselectable="true"
+<tabs deselectable="true" id="target" model="${tm}"/>
+
+event="mouseover"
+<tabs event="mouseover" id="target" model="${tm}"/>
+
+idPrefix="taaaab-"
+<tabs idPrefix="taaaab-" id="target" model="${tm}"/>
+
+panelTemplate="div p"
+<tabs panelTemplate="&lt;div&gt;&lt;p&gt;&lt;/p&gt;&lt;/div&gt;" id="target" model="${tm}"/>
+
+spinner="looooading"
+<tabs spinner="looooading" id="target" model="${tm}"/>
+
+tabTemplate="li"
+<tabs tabTemplate="li" id="target" model="${tm}"/>
+
+ajaxOptions="{async:false}"
+<tabs ajaxOptions="{async:false}" id="target" model="${tm}"/>
+
+cookie='{ expires: 30 }'
+<tabs cookie='{ expires: 30 }' id="target" model="${tm}"/>
+
+selected="1"
+<tabs selected="1" id="target" model="${tm}"/>
+
+fx="{ opacity: 'toggle' }"
+<tabs fx="{ opacity: 'toggle' }" id="target" model="${tm}"/>
+-->
+
+disabled="0,1"
+<tabs disabled="0,1" id="target" model="${tm}"/>
+
+<hbox>
+	<!--
+	<button label='detach()' onClick='target.detach();' />
+
+	<button label="setModel(date)">
+		<attribute name="onClick"><![CDATA[
+			import org.zkoss.jquery4j.jqueryui.tabs.TabsModel;
+		    
+			String[][] model = {{"t1","c1"},{"t2","c2"},{"t3","<ul><li>List item one</li><li>List item two</li><li>List item three</li></ul>"}};
+			TabsModel bm = new TabsModel(model);
+			target.setModel(bm);
+			]]>
+		</attribute>    
+	</button>		
+	 
+ 
+	<button label='setDisabled(true)' onClick='target.setDisabled(true);' />
+	<button label='setDisabled(false)' onClick='target.setDisabled(false);' />
+	
+	<button label='setCache(true)' onClick='target.setCache(true);' />
+	<button label='setCache(false)' onClick='target.setCache(false);' />
+
+	<button label='setCollapsible(true)' onClick='target.setCollapsible(true);' />
+	<button label='setCollapsible(false)' onClick='target.setCollapsible(false);' />
+
+	<button label='setDeselectable(true)' onClick='target.setDeselectable(true);' />
+	<button label='setDeselectable(false)' onClick='target.setDeselectable(false);' />
+
+	<button label='setEvent("mouseover")' onClick='target.setEvent("mouseover");' />
+	<button label='setEvent("click")' onClick='target.setEvent("click");' />
+						
+	<button label='setIdPrefix("idbutton-")' onClick='target.setIdPrefix("idbutton-");' />					
+
+	<button label='setPanelTemplate("div h1")' onClick='target.setPanelTemplate("<div><h1></h1></div>");' />
+	 
+	<button label='setSpinner("spiiin")' onClick='target.setSpinner("spiiin");' />	 
+
+	<button label='setTabTemplate("ddd")' onClick='target.setTabTemplate("ddd")' />
+		
+	<button label='setAjaxOptions("{async:true}")' onClick='target.setAjaxOptions("{async:true}")' />
+		
+	<button label='setCookie("{ expires: 40 }")' onClick='target.setCookie("{ expires: 40 }")' />
+
+	<button label='setSelected(0)' onClick='target.setSelected(0)' />		
+	
+	
+	<button label='setFx("")'>
+		<attribute name="onClick"><![CDATA[					    
+			target.setFx("{ opacity: 'toggle' }");
+			]]>
+		</attribute>    
+	</button>
+	-->
+	
+	<button label='setDisabled(0)' onClick='target.setDisabled(0)' />
+	<button label='setDisabled(1)' onClick='target.setDisabled(1)' />
+</hbox>
+
+
+</window>
+</zk>

@@ -1,24 +1,24 @@
-package org.zkoss.jquery4j.jqueryui.accordion;
+package org.zkoss.jquery4j.jqueryui.tabs;
 
 import java.util.LinkedList;
 import java.util.List;
 
 
-public class AccordionModel {
+public class TabsModel {
 	
-	String[][] _content;
+	String[][] _content ={{"tab1","content1"},{"tab2","content2"}};
 	
 	private boolean _modified = true;//false;
 	private transient List _listeners = new LinkedList();
 	
-	public AccordionModel(){		
+	public TabsModel(){		
 	}
 	
-	public AccordionModel(String[][] model){
+	public TabsModel(String[][] model){
 		_content = model;
 	}
 	
-	public void addAccordionDataListener(AccordionDataListener l){
+	public void addTabsDataListener(TabsDataListener l){
 		_listeners.add(l);
 	}
 	
