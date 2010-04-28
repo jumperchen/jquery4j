@@ -95,7 +95,8 @@ jquery4j.jqueryui.Dialog = zk.$extends(zul.Widget,{
 		},
 		position :  function(){
 			$(this.$n('cnt')).dialog('option','position',this._position);
-		},
+		}
+		,
 		buttons :  function(){
 			$(this.$n('cnt')).dialog('option','buttons',jq.evalJSON(this._buttons));
 		}				
@@ -141,6 +142,7 @@ jquery4j.jqueryui.Dialog = zk.$extends(zul.Widget,{
 			,maxWidth: this._maxWidth
 			,position: this._position
 			,buttons: jq.evalJSON(this._buttons)
+			//,buttons: { "Ok": function() { zk.log("button") } }  
 		};		
 
 		$(content).dialog(options);				

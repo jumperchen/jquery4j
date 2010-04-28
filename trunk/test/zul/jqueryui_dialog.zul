@@ -83,7 +83,7 @@
 	<dialog position="${position}"  content="hello world" title='position="600,500"' />
 	-->		
 	buttons={}
-	<dialog buttons='{ buttons: { "Ok": function() { $(this).dialog("close"); } } }' id="target" content="buttons=" title="title1" />
+	<dialog buttons='{ "Ok": function() { zk.log("from zul") } } ' id="target" content="buttons=" title="title1" />
 	<hbox>			
 		
 		<button label='setOpen(true)' onClick='target.setOpen(true)' />
