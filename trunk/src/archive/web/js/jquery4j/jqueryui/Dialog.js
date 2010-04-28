@@ -20,6 +20,10 @@ Copyright (C) 2008 Potix Corporation. All Rights Reserved.
 jquery4j.jqueryui.Dialog = zk.$extends(zul.Widget,{	
 	
 	$define: {	
+		methodName :  function(){
+			$(this.$n('cnt')).dialog(this._methodName);
+		},	
+	
 		open :  function(){
 			if(this._open){
 				$(this.$n('cnt')).dialog('open');	
@@ -27,7 +31,6 @@ jquery4j.jqueryui.Dialog = zk.$extends(zul.Widget,{
 				$(this.$n('cnt')).dialog('close');
 			}			
 		},
-	
 		title: function (title) {
 			if (this.desktop)
 				this.rerender();
@@ -105,8 +108,18 @@ jquery4j.jqueryui.Dialog = zk.$extends(zul.Widget,{
 		
 		var options = {   		
 			open : function (event,ui){							
-				//wgt.fire('onProgressbarChange', {value:wgt._value});
-			}			
+				wgt.fire('onOpen', {open:true});
+			},
+			close: function(event, ui) {
+				wgt.fire('onClose'); 
+			},		
+			resize : function(event,ui){
+				wgt.fire('onResize',{width:ui.size.width,height:ui.size.height});
+			},
+			drag :function(event,ui){
+				wgt.fire('onDrag',{left:ui.position.left,top:ui.position.top});
+			}
+
 			,disabled: this._disabled
 			,autoOpen: this._autoOpen			
 			,closeOnEscape: this._closeOnEscape
