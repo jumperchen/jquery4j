@@ -17,14 +17,33 @@ Copyright (C) 2006 Potix Corporation. All Rights Reserved.
 
 package org.zkoss.jquery4j.jqueryui.dialog;
 
-import org.codehaus.groovy.tools.shell.util.ANSI.Renderer;
+import org.zkoss.jquery4j.jqueryui.dialog.events.DragEvent;
+import org.zkoss.jquery4j.jqueryui.dialog.events.ResizeEvent;
 import org.zkoss.jquery4j.jqueryui.parameter.Mix;
+import org.zkoss.jquery4j.jqueryui.slider.events.StartEvent;
 import org.zkoss.lang.Objects;
 import org.zkoss.zk.ui.UiException;
+import org.zkoss.zk.ui.event.Events;
+import org.zkoss.zk.ui.event.OpenEvent;
 import org.zkoss.zul.impl.XulElement;
 
 public class Dialog extends XulElement {
-	
+
+	private class DialogEvents {
+		public static final String ON_RESIZE = "onResize";
+		public static final String ON_DRAG = "onDrag";
+	}
+
+	static {
+		addClientEvent(Dialog.class, Events.ON_CLOSE, 0);
+		addClientEvent(Dialog.class, Events.ON_OPEN, CE_IMPORTANT);
+
+		//addClientEvent(Dialog.class, Events.ON_FOCUS, CE_DUPLICATE_IGNORE);
+		
+		addClientEvent(Dialog.class, DialogEvents.ON_RESIZE, CE_DUPLICATE_IGNORE|CE_IMPORTANT);
+		addClientEvent(Dialog.class, DialogEvents.ON_DRAG, CE_DUPLICATE_IGNORE|CE_IMPORTANT);	
+	}
+
 
 	//different from other boolean, no render
 	private boolean _open = true;
@@ -47,8 +66,27 @@ public class Dialog extends XulElement {
 	private String _show = "";//"slide", etc
 	private String _title = "";
 	
+	//Must convert to Object in client side
 	private String _buttons = "";
+	
+	private int _minHeight = 150;
+	private int _minWidth = 150;
+	private int _width = 300;
+	private int _zIndex = 1000;
+	
+	private Mix _height = new Mix("auto");
+	private Mix _maxHeight = new Mix(false);
+	private Mix _maxWidth = new Mix(false);
+	private Mix _position = new Mix("center");
 
+	//TODO: how about .dialog( "option" , optionName , [value] ) ??
+	//TODO: how to get the result of such?
+	public void callWidgetMethod(String methodName){
+		//"destroy","disable","enable","widget","close","isOpen","moveToTop","open"
+		//TODO: affect variable _open ? should sync such state variable
+		smartUpdate("methodName", methodName);
+	}
+	
 	public String getButtons() {
 		return _buttons;
 	}
@@ -60,20 +98,6 @@ public class Dialog extends XulElement {
 			smartUpdate("buttons", _buttons);
 		}
 	}
-
-
-
-	
-	
-	private int _minHeight = 150;
-	private int _minWidth = 150;
-	private int _width = 300;
-	private int _zIndex = 1000;
-	
-	private Mix _height = new Mix("auto");
-	private Mix _maxHeight = new Mix(false);
-	private Mix _maxWidth = new Mix(false);
-	private Mix _position = new Mix("center");
 
 	public Object getPosition() {
 		if(_position != null){
@@ -283,9 +307,6 @@ public class Dialog extends XulElement {
 			smartUpdate("closeText", _closeText);
 		}
 	}
-
-
-
 	
 	public boolean getStack() {
 		return _stack;
@@ -393,6 +414,32 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	@Override
+	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
+		final String cmd = request.getCommand();
+//		if (cmd.equals(Events.ON_CLOSE)) {
+//			System.out.println("event received : close : ");
+//		}else 
+		if (cmd.equals(Events.ON_OPEN)) {
+			OpenEvent evt = OpenEvent.getOpenEvent(request);
+			setVisible(evt.isOpen());
+			_open = evt.isOpen();
+			Events.postEvent(evt);
+		}else if (cmd.equals(DialogEvents.ON_RESIZE)) {
+			ResizeEvent evt = ResizeEvent.getResizeEvent(request);
+			_width = evt.getWidth();
+			_height.setValue(evt.getHeight());
+			Events.postEvent(evt);
+		}else if (cmd.equals(DialogEvents.ON_DRAG)) {			
+			DragEvent evt = DragEvent.getDragEvent(request);
+			_left = String.valueOf(evt.getLeft());
+			_top = String.valueOf(evt.getTop());
+			Events.postEvent(evt);
+		}else
+			super.service(request, everError);
+	}
+	
+	
 	@Override
 	protected void renderProperties(org.zkoss.zk.ui.sys.ContentRenderer renderer)
 			throws java.io.IOException {
