@@ -1,6 +1,6 @@
 <?page title="accordion" contentType="text/html;charset=UTF-8"?>
 <zk>
-<window id="win1" title="test jqueryui accordion" border="normal" apply="jqueryuitest.AccordionController">
+<window id="win1" title="test jqueryui accordion" border="normal" apply="jqueryuitest.ButtonController">
 
 <zscript>
 <![CDATA[
