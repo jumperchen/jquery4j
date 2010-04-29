@@ -1,14 +1,55 @@
-<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?page title="autocomplete" contentType="text/html;charset=UTF-8"?>
 
 <zk>
 
-<window title="new page title" border="normal">
+	<window title="test jqueryui autocomplete" border="normal">
+	<zscript>
+	<![CDATA[
+		String[] model = {"a01","a02","a03","a11","a12","a13","a21","a22","a23","a31","a32","a33"};		
+		String[] model2 = {"ca","cb","cc"};
+		]]>
+	</zscript>
+		
+		default:
+		<autocomplete />
 
-<autocomplete id="comp1" availableTags="aaa,bbb,ccc"/>
+		target:
+		<autocomplete id="target" source="${model}"/>
 
-<autocomplete id="comp2" />
+		source="aaa,bbb,ccc"
+		<autocomplete source="aaa,bbb,ccc" />
+		
+		source="{model}"
+		<autocomplete source="${model}" />
+		
+		disabled="true"
+		<autocomplete disabled="true" source="${model}" />
+		
+		delay="1000"
+		<autocomplete delay="1000" source="${model}" />
+		
+		minLength="0"
+		<autocomplete minLength="0" source="${model}" />
+		
+		source="b1,b2,b3"
+		<autocomplete source="b1,b2,b3" />
+		<hbox>
+			<button label='autocomplete getSelected()' onClick='alert(target.getSelected())' />
+			
+			<button label='setDisabled(true)' onClick='target.setDisabled(true)' />
+			<button label='setDisabled(false)' onClick='target.setDisabled(false)' />
+			<button label='setDelay(1000)' onClick='target.setDelay(1000)' />
+			<button label='setMinLength(0)' onClick='target.setMinLength(0)' />
+			
+			<button label='setSource("da,db,dc")' onClick='target.setSource("da,db,dc");' />
 
-<button label="autocomplete" onClick='alert(comp1.getSelected())'/>
-
-</window>
+			<button label="setSource(model)">
+				<attribute name="onClick"><![CDATA[
+					String[] model = {"ea","eb","ec"};
+					target.setSource(model);
+					]]>
+				</attribute>    
+			</button>								
+		</hbox>
+	</window>
 </zk>
