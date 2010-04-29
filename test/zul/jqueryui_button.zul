@@ -1,20 +1,46 @@
-<?page title="new page title" contentType="text/html;charset=UTF-8"?>
+<?page title="button" contentType="text/html;charset=UTF-8"?>
 
 <zk>
 
-<window title="new page title" border="normal">
+<window title="test jquery ui button" border="normal">
 
- 
-<jqbutton id="comp1" label="default" onClick='alert("get clicked event")'/>
+target:
+<jqbutton label="default" id="target" onClick='alert("get clicked event")'/>
 
-<jqbutton id="comp3" label="checkbox" childLabels="aaa,bbb,ccc" type="checkbox" onClick='alert("2 get clicked event")'/>
+disabled="true"
+<jqbutton disabled="true" label="default"/>
 
-<jqbutton id="comp2" label="radio" childLabels="radio,radio" type="radio" />
+text="false"
+<jqbutton text="false" icons="{primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}" label="default"/>
 
-<jqbutton id="comp4"  onClick='alert("get clicked event")' width="100px" height="100px"/>
+icons="pri sec"
+<jqbutton icons="{primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}" label="default"/>
 
-<button label="jq button" />
+icons="pri"
+<jqbutton icons="{primary:'ui-icon-gear'}" label="default"/>
 
+icons="sec"
+<jqbutton icons="{secondary:'ui-icon-triangle-1-s'}" label="default"/>
+
+<!-- 
+<jqbutton label="checkbox" childLabels="aaa,bbb,ccc" type="checkbox" onClick='alert("2 get clicked event")'/>
+
+<jqbutton label="radio" childLabels="radio,radio" type="radio" />
+
+<jqbutton onClick='alert("get clicked event")' width="100px" height="100px"/>
+ -->
+
+<hbox>
+	<button label='setDisabled(true)' onClick='target.setDisabled(true)' />
+	<button label='setDisabled(false)' onClick='target.setDisabled(false)' />
+
+	<button label="setIcons">
+		<attribute name="onClick"><![CDATA[
+			target.setIcons("{primary:'ui-icon-gear',secondary:'ui-icon-triangle-1-s'}");
+			]]>
+		</attribute>    
+	</button>	
+</hbox>
 </window>
 </zk>
 

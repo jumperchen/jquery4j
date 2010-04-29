@@ -18,39 +18,60 @@ Copyright (C) 2008 Potix Corporation. All Rights Reserved.
 */
 
 jquery4j.jqueryui.Button = zk.$extends(zul.Widget,{
-	
-	_label: null,
+
 	_type: "default",
 	_childLabels: [],
 	
-	$define: {
-		label:null,
+	$define: {		
 		type:null,
-		childLabels:null
+		childLabels:null,
+		
+		disabled :  function(){
+			$(this.$n('cnt')).button('option','disabled',this._disabled);
+		},
+		text :  function(){
+			$(this.$n('cnt')).button('option','text',this._text);
+		},
+		label :  function(){
+			$(this.$n('cnt')).button('option','label',this._label);
+		},
+		icons :  function(){
+			$(this.$n('cnt')).button('option','icons',jq.evalJSON(this._icons));
+		}
+			
 	},
 	
 	bind_: function () {
 		this.$supers('bind_', arguments);
 		var content = this.$n('cnt');		
-
-		//zk.log(this.$n('cnt').id);
-		if(this._type =="default"){
-			//$('#'+this.$n('cnt').id).button({			
-			$(content).button({
-			});							
+		var wgt = this;
+		
+		var options = {
+			disabled: this._disabled
+			,text: this._text
+			,label: this._label
+			,icons: jq.evalJSON(this._icons)		
+		}
+		
+		if(this._type =="default"){						
+			$(content).button(options);							
 		}else if(this._type=="radio" || this._type=="checkbox"){
-			$(content).buttonset({	
-				//TODO: how do I know which button is clicked?
-						
-			});										
+			//TODO: how do I know which button is clicked?
+			$(content).buttonset(options);										
 		}
 	},
 	
+	unbind_: function () {				
+		var content = this.$n('cnt');
+		$(content).button('destroy');		
+		this.$supers('unbind_', arguments);
+	},
+		
 	redraw: function (out) {
 		out.push('<div',this.domAttrs_(),'>');
 		if (this._type == "default") {
-			//out.push('<button style="width:100%;height:100%" id="', this.uuid, '-cnt" ', '>', this._label, '</button>');			
-			out.push('<button id="', this.uuid, '-cnt" ', '>', this._label, '</button>');
+			//out.push('<button style="width:100%;height:100%;" id="', this.uuid, '-cnt" ', '>', this._label, '</button>');		
+			out.push('<button id="', this.uuid, '-cnt">', this._label, '</button>');
 		}
 		else if (this._type == "radio") {
 			out.push('<div id="', this.uuid, '-cnt" ', '>');
