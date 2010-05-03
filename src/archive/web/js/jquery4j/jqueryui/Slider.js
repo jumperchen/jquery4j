@@ -43,8 +43,7 @@ jquery4j.jqueryui.Slider = zk.$extends(zul.Widget,{
 		},
 		animate : function(){
 				$(this.$n('cnt')).slider('option','animate',this._animate);			
-		},
-		
+		},		
 		values : function(){
 			$(this.$n('cnt')).slider('option','values',this._values);			
 		}											

@@ -30,7 +30,7 @@ import org.zkoss.zul.impl.XulElement;
 public class Slider extends XulElement {
 	
 	private boolean _disabled = false;
-	
+		
 	private int _value = 0;	
 	private int _max = 100;
 	private int _min = 0;
@@ -106,11 +106,7 @@ public class Slider extends XulElement {
 		}				
 		return result;
 	}
- 
-	public enum Type {
-		BOOLEAN,STRING,NUMBER
-	}
-		
+ 		
 	public String getOrientation(){
 		return _orientation;
 	}

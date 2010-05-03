@@ -4,16 +4,22 @@
 
 <zscript>
 <![CDATA[
-	import org.zkoss.jquery4j.jqueryui.accordion.AccordionModel;
-    
+	import org.zkoss.jquery4j.jqueryui.accordion.AccordionModel;    
 	String[][] model = {{"t1","c1"},{"t2","c2"}};
+	String[][] model2 = {{"tc1","cc1"},{"tc2","cc2"},{"tc3","cc3"}};
 	AccordionModel tm = new AccordionModel(model);
-	target.setModel(tm);
+	AccordionModel tm2 = new AccordionModel(model2);
 	]]>
 </zscript>
 
 target: 
 <accordion id="target" model="${tm}"/>
+<button label="setModel(date)">
+	<attribute name="onClick"><![CDATA[		
+		target.setModel(tm2);
+		]]>
+	</attribute>    
+</button>	
 
 <!--   
 disabled="true"
@@ -42,7 +48,7 @@ event="mouseover"
 
 fillSpace="true"
 <accordion fillSpace="true" model="${tm}"/>
--->
+
 
 active="1"
 <accordion active="1"/>
@@ -50,11 +56,12 @@ active="2"
 <accordion active="2"/>
 active="false"
 <accordion active="false" collapsible="true"/>
+-->
 
 <hbox>
 	<!--
 	<button label='detach()' onClick='target.detach();' />
-	-->
+	
 	<button label="setModel(date)">
 		<attribute name="onClick"><![CDATA[
 			import org.zkoss.jquery4j.jqueryui.accordion.AccordionModel;
@@ -66,7 +73,7 @@ active="false"
 		</attribute>    
 	</button>		
 	 
-	<!-- 
+	 
 	<button label='setDisabled(true)' onClick='target.setDisabled(true);' />
 	<button label='setDisabled(false)' onClick='target.setDisabled(false);' />
 		

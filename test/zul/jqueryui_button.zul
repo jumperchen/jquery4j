@@ -2,11 +2,12 @@
 
 <zk>
 
-<window title="test jquery ui button" border="normal">
+<window title="test jquery ui button" border="normal" apply="jqueryuitest.ButtonController">
 
 target:
-<jqbutton label="default" id="target" onClick='alert("get clicked event")'/>
+<jqbutton label="default" id="target"/>
 
+ 
 disabled="true"
 <jqbutton disabled="true" label="default"/>
 
@@ -22,10 +23,16 @@ icons="pri"
 icons="sec"
 <jqbutton icons="{secondary:'ui-icon-triangle-1-s'}" label="default"/>
 
-<!-- 
-<jqbutton label="checkbox" childLabels="aaa,bbb,ccc" type="checkbox" onClick='alert("2 get clicked event")'/>
 
-<jqbutton label="radio" childLabels="radio,radio" type="radio" />
+
+radio:
+<jqbutton id="radio" label="radio" childLabels="radio1,radio2,radio3" type="radio" />
+
+checkbox:
+<jqbutton id="checkbox" label="checkbox" childLabels="check1,check2,check3" type="checkbox"/>
+
+<!-- 
+
 
 <jqbutton onClick='alert("get clicked event")' width="100px" height="100px"/>
  -->
