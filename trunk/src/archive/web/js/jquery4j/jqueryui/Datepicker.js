@@ -256,6 +256,7 @@ jquery4j.jqueryui.Datepicker = zk.$extends(zul.Widget,{
 	},	
 	
 	redraw: function (out) {
+		//zk.log(this._disabled);
 		out.push('<div',this.domAttrs_(),'>');
 		out.push('<input id="',this.uuid,'-cnt" ','type="text"/>');
 		out.push('</div>');

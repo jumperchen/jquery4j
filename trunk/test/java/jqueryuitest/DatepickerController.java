@@ -1,16 +1,16 @@
 package jqueryuitest;
 
 import org.zkoss.jquery4j.jqueryui.datepicker.Datepicker;
-import org.zkoss.jquery4j.jqueryui.progressbar.events.ChangedEvent;
+import org.zkoss.zk.ui.event.Event;
 import org.zkoss.zk.ui.util.GenericForwardComposer;
 
 public class DatepickerController extends GenericForwardComposer {
 	
 	
-	Datepicker comp1;
+	Datepicker target;
 	
-	public void onProgressbarChange$comp1(ChangedEvent e) {
-		System.out.println("Datepicker value changed : "+ e.getValue());
+	public void onSelection$target(Event e) {
+		System.out.println("Datepicker selection happen : "+ e);
 	}
 	
 }
