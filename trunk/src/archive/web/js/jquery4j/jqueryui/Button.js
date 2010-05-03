@@ -54,7 +54,11 @@ jquery4j.jqueryui.Button = zk.$extends(zul.Widget,{
 		}
 		
 		if(this._type =="default"){						
-			$(content).button(options);							
+			$(content).button(options);//.click(function(){
+				//zk.log("clicked")
+				//wgt.fire();
+				//return false;
+			//});										
 		}else if(this._type=="radio" || this._type=="checkbox"){
 			//TODO: how do I know which button is clicked?
 			$(content).buttonset(options);										
