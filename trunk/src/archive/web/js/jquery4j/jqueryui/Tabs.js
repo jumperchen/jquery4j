@@ -25,7 +25,7 @@ jquery4j.jqueryui.Tabs = zk.$extends(zul.Widget,{
 				this.rerender();
 		},
 		disabled :  function(){
-			zk.log('define disabled : '+ this._disabled);
+			//zk.log('define disabled : '+ this._disabled);
 			$(this.$n('cnt')).tabs('option','disabled',this._disabled);
 		},
 		cache :  function(){
@@ -97,7 +97,7 @@ jquery4j.jqueryui.Tabs = zk.$extends(zul.Widget,{
 			,fx: jq.evalJSON(this._fx)			
 		};		
 		
-		zk.log('bind disabled : '+this._disabled);
+		//zk.log('bind disabled : '+this._disabled);
 		
 		$(content).tabs(options);			
 	},

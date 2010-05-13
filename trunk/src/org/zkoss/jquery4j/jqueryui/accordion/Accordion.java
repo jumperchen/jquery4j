@@ -23,6 +23,14 @@ import org.zkoss.lang.Objects;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zul.impl.XulElement;
 
+
+
+/**
+ * 
+ * An accordion
+ * @author whkuo
+ *
+ */
 public class Accordion extends XulElement {
 
 	private class AccordionEvents {
@@ -57,10 +65,17 @@ public class Accordion extends XulElement {
 	
 	private String _icons = "{ 'header': 'ui-icon-triangle-1-e', 'headerSelected': 'ui-icon-triangle-1-s' }";
 	
+	/**Returns the icons
+	 * @return
+	 */
 	public String getIcons() {
 		return _icons;		
 	}
 	
+	
+	/**Icons to use for headers. Icons may be specified for 'header' and 'headerSelected', and we recommend using the icons native to the jQuery UI CSS Framework manipulated by jQuery UI ThemeRoller
+	 * @param icons
+	 */
 	public void setIcons(String icons){
 		if(icons == null || icons.length() == 0) icons="{ 'header': 'ui-icon-triangle-1-e', 'headerSelected': 'ui-icon-triangle-1-s' }";
 		if (!_icons.equals(icons)) {
@@ -69,10 +84,17 @@ public class Accordion extends XulElement {
 		}
 	}
 		
+	/**Returns the header
+	 * @return
+	 */
 	public String getHeader() {
 		return _header;
 	}
 	
+	/**Selector for the header element.
+	 * 
+	 * @param header
+	 */
 	public void setHeader(String header){
 		if(header == null || header.length() == 0) header="> li > :first-child,> :not(li):even";
 		if (!_header.equals(header)) {
@@ -80,11 +102,19 @@ public class Accordion extends XulElement {
 			smartUpdate("header", _header);
 		}
 	}
-		
+	
+	/**Returns the fillSpace
+	 * 
+	 * @return
+	 */
 	public boolean getFillSpace() {
 		return _fillSpace;
 	}
 	
+	/**If set, the accordion completely fills the height of the parent element. Overrides autoheight.
+	 * 
+	 * @param fillSpace
+	 */
 	public void setFillSpace(boolean fillSpace) {
 		if(_fillSpace != fillSpace){
 			_fillSpace = fillSpace;
@@ -92,10 +122,18 @@ public class Accordion extends XulElement {
 		}
 	}	
 	
+	/**Returns the event
+	 * 
+	 * @return
+	 */
 	public String getEvent() {
 		return _event;
 	}
 	
+	/**The event on which to trigger the accordion.
+	 * 
+	 * @param event
+	 */
 	public void setEvent(String event){
 		if(event == null || event.length() == 0) event="click";
 		if (!_event.equals(event)) {
@@ -103,11 +141,19 @@ public class Accordion extends XulElement {
 			smartUpdate("event", _event);
 		}
 	}
-		
+	
+	/**Returns the navigationFilter
+	 * 
+	 * @return
+	 */
 	public String getNavigationFilter() {
 		return _navigationFilter;
 	}
 	
+	/**Overwrite the default location.href-matching with your own matcher.
+	 * 
+	 * @param navigationFilter
+	 */
 	public void setNavigationFilter(String navigationFilter){
 		if(navigationFilter == null || navigationFilter.length() == 0) navigationFilter="";
 		if (!_navigationFilter.equals(navigationFilter)) {
@@ -116,6 +162,10 @@ public class Accordion extends XulElement {
 		}
 	}
 
+	/**Returns the active.
+	 * 
+	 * @return
+	 */
 	public Object getActive() {
 		if(_active != null){
 			return _active.getValue();
@@ -123,6 +173,10 @@ public class Accordion extends XulElement {
 		return null;
 	}
 	
+	/**
+	 * Selector for the active element. Set to false to display none at start. Needs collapsible: true.
+	 * @param active
+	 */
 	public void setActive(Object active){
 		if(_active == null) _active = new Mix();
 		_active.setValue(active);
@@ -130,6 +184,9 @@ public class Accordion extends XulElement {
 	}
 
 
+	/**Returns the animated
+	 * @return
+	 */
 	public Object getAnimated() {
 		if(_animated != null){
 			return _animated.getValue();
@@ -137,27 +194,46 @@ public class Accordion extends XulElement {
 		return null;
 	}
 	
+	/**Choose your favorite animation, or disable them (set to false). In addition to the default, 'bounceslide' and all defined easing methods are supported ('bounceslide' requires UI Effects Core).
+	 * 
+	 * @param animated
+	 */
 	public void setAnimated(Object animated){
 		if(_animated == null) _animated = new Mix("slide");
 		_animated.setValue(animated);
 		smartUpdate("animated", _animated.getValue());
 	}
 	
+	/**Returns the navigation
+	 * @return
+	 */
 	public boolean getNavigation() {
 		return _navigation;
 	}
 	
+	/**If set, looks for the anchor that matches location.href and activates it. Great for href-based state-saving. Use navigationFilter to implement your own matcher.
+	 * 
+	 * @param navigation
+	 */
 	public void setNavigation(boolean navigation) {
 		if(_navigation != navigation){
 			_navigation = navigation;
 			smartUpdate("navigation", _navigation);					
 		}
 	}
-		
+
+	
+	/**Returns the collapsible
+	 * @return
+	 */
 	public boolean getCollapsible() {
 		return _collapsible;
 	}
 	
+	
+	/**Whether all the sections can be closed at once. Allows collapsing the active section by the triggering event (click is the default).
+	 * @param collapsible
+	 */
 	public void setCollapsible(boolean collapsible) {
 		if(_collapsible != collapsible){
 			_collapsible = collapsible;
@@ -165,10 +241,16 @@ public class Accordion extends XulElement {
 		}
 	}
 			
+	/**Returns the clearStyle
+	 * @return
+	 */
 	public boolean getClearStyle() {
 		return _clearStyle;
 	}
 	
+	/**If set, clears height and overflow styles after finishing animations. This enables accordions to work with dynamic content. Won't work together with autoHeight.
+	 * @param clearStyle
+	 */
 	public void setClearStyle(boolean clearStyle) {
 		if(_clearStyle != clearStyle){
 			_clearStyle = clearStyle;
@@ -176,21 +258,35 @@ public class Accordion extends XulElement {
 		}
 	}
 	
+	/** Returns the autoHeight
+	 * @return
+	 */
 	public boolean getAutoHeight() {
 		return _autoHeight;
 	}
 	
+	
+	/**If set, the highest content part is used as height reference for all other parts. Provides more consistent animations.
+	 * @param autoHeight
+	 */
 	public void setAutoHeight(boolean autoHeight) {
 		if(_autoHeight != autoHeight){
 			_autoHeight = autoHeight;
 			smartUpdate("autoHeight", _autoHeight);					
 		}
 	}
-		
+
+	
+	/**Returns the disabled
+	 * @return
+	 */
 	public boolean getDisabled() {
 		return _disabled;
 	}
 	
+	/**Disables (true) or enables (false) the accordion. Can be set when initialising (first creating) the accordion.
+	 * @param disabled
+	 */
 	public void setDisabled(boolean disabled) {
 		if(_disabled != disabled){
 			_disabled = disabled;
@@ -210,6 +306,10 @@ public class Accordion extends XulElement {
 		return _model;
 	}
 	
+	
+	/** Sets the data model will be used to render the output.
+	 * @param model
+	 */
 	public void setModel(AccordionModel model){
 		if(!Objects.equals(_model, model)){
 			_model = model;
@@ -233,6 +333,10 @@ public class Accordion extends XulElement {
 		setModel(model);
 	}
 
+	/**
+	 * Processes an AU request.
+	 * 
+	 */	
 	@Override
 	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
 		final String cmd = request.getCommand();

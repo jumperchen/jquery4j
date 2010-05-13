@@ -20,13 +20,17 @@ package org.zkoss.jquery4j.jqueryui.dialog;
 import org.zkoss.jquery4j.jqueryui.dialog.events.DragEvent;
 import org.zkoss.jquery4j.jqueryui.dialog.events.ResizeEvent;
 import org.zkoss.jquery4j.jqueryui.parameter.Mix;
-import org.zkoss.jquery4j.jqueryui.slider.events.StartEvent;
 import org.zkoss.lang.Objects;
 import org.zkoss.zk.ui.UiException;
 import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.event.OpenEvent;
 import org.zkoss.zul.impl.XulElement;
 
+/**A Dialog
+ * 
+ * @author whkuo
+ *
+ */
 public class Dialog extends XulElement {
 
 	private class DialogEvents {
@@ -87,10 +91,17 @@ public class Dialog extends XulElement {
 		smartUpdate("methodName", methodName);
 	}
 	
+	/**Returns the buttons
+	 * @return
+	 */
 	public String getButtons() {
 		return _buttons;
 	}
 	
+	
+	/**Specifies which buttons should be displayed on the dialog. The property key is the text of the button. The value is the callback function for when the button is clicked. The context of the callback is the dialog element; if you need access to the button, it is available as the target of the event object. 
+	 * @param buttons
+	 */
 	public void setButtons(String buttons){
 		if(buttons == null || buttons.length() == 0) buttons="";
 		if (!_buttons.equals(buttons)) {
@@ -99,6 +110,9 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Returns the position
+	 * @return
+	 */
 	public Object getPosition() {
 		if(_position != null){
 			return _position.getValue();
@@ -106,7 +120,7 @@ public class Dialog extends XulElement {
 		return null;
 	}
 
-	public static boolean isInteger(String value) {
+	private static boolean isInteger(String value) {
 		try {
 			Integer.parseInt(value);
 			return true;
@@ -115,6 +129,12 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Specifies where the dialog should be displayed. Possible values:
+	 * 1) a single string representing position within viewport: 'center', 'left', 'right', 'top', 'bottom'.
+	 * 2) an array containing an x,y coordinate pair in pixel offset from left, top corner of viewport (e.g. [350,100])
+	 * 3) an array containing x,y position string values (e.g. ['right','top'] for top right corner).
+	 * @param position
+	 */
 	public void setPosition(Object position){
 		if(_position == null) _position = new Mix("center");
 		if(position instanceof String){
@@ -133,6 +153,9 @@ public class Dialog extends XulElement {
 		smartUpdate("position", _position.getValue());
 	}
 
+	/**Returns the maxWidth
+	 * @return
+	 */
 	public Object getMaxWidth() {
 		if(_maxWidth != null){
 			return _maxWidth.getValue();
@@ -140,12 +163,18 @@ public class Dialog extends XulElement {
 		return null;
 	}
 	
+	/**The maximum width to which the dialog can be resized, in pixels.
+	 * @param maxWidth
+	 */
 	public void setMaxWidth(Object maxWidth){
 		if(_maxWidth == null) _maxWidth = new Mix(false);
 		_maxWidth.setValue(maxWidth);
 		smartUpdate("maxWidth", _maxWidth.getValue());
 	}
 
+	/**Returns the maxHeight
+	 * @return
+	 */
 	public Object getMaxHeight() {
 		if(_maxHeight != null){
 			return _maxHeight.getValue();
@@ -153,6 +182,9 @@ public class Dialog extends XulElement {
 		return null;
 	}
 	
+	/**The maximum height to which the dialog can be resized, in pixels.
+	 * @param maxHeight
+	 */
 	public void setMaxHeight(Object maxHeight){
 		if(_maxHeight == null) _maxHeight = new Mix(false);
 		_maxHeight.setValue(maxHeight);
@@ -160,6 +192,10 @@ public class Dialog extends XulElement {
 	}
 
 	//TODO: 
+	
+	/**Returns the height
+	 * 
+	 */
 	@Override
 	public String getHeight() {
 		if(_height != null){
@@ -168,6 +204,10 @@ public class Dialog extends XulElement {
 		return null;
 	}
 	
+	
+	/**The height of the dialog, in pixels. Specifying 'auto' is also supported to make the dialog adjust based on its content.
+	 * @param height
+	 */
 	public void setHeight(Object height){
 		if(_height == null) _height = new Mix("auto");
 		_height.setValue(height);
@@ -175,11 +215,17 @@ public class Dialog extends XulElement {
 	}
 	
 	
-	
+	/**Returns the  zIndex
+	 * 
+	 */
 	public int getZIndex(){
 		return _zIndex;
 	}
 	
+	
+	/**The starting z-index for the dialog.
+	 * 
+	 */
 	public void setZIndex(int zIndex){
 		if (zIndex < 0 )
 			throw new UiException("Illegal zIndex: "+zIndex+". Range: 0 ~ ");
@@ -190,12 +236,18 @@ public class Dialog extends XulElement {
 		}
 	}
 	
-	
+	/**Returns the width
+	 * 
+	 */
 	public String getWidth(){
 		//return _width;
 		return String.valueOf(_width);
 	}
 	
+	
+	/**The width of the dialog, in pixels.
+	 * @param width
+	 */
 	public void setWidth(int width){
 		if (width < 0 )
 			throw new UiException("Illegal width: "+width+". Range: 0 ~ ");
@@ -206,10 +258,16 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Returns the minWidth
+	 * @return
+	 */
 	public int getMinWidth(){
 		return _minWidth;
 	}
 	
+	/**The minimum width to which the dialog can be resized, in pixels.
+	 * @param minWidth
+	 */
 	public void setMinWidth(int minWidth){
 		if (minWidth < 0 )
 			throw new UiException("Illegal minWidth: "+minWidth+". Range: 0 ~ ");
@@ -222,10 +280,16 @@ public class Dialog extends XulElement {
 
 
 	
+	/**Returns the minHeight
+	 * @return
+	 */
 	public int getMinHeight(){
 		return _minHeight;
 	}
 	
+	/**The minimum height to which the dialog can be resized, in pixels.
+	 * @param minHeight
+	 */
 	public void setMinHeight(int minHeight){
 		if (minHeight < 0 )
 			throw new UiException("Illegal minHeight: "+minHeight+". Range: 0 ~ ");
@@ -238,10 +302,16 @@ public class Dialog extends XulElement {
 
 
 	
+	/**Returns the open
+	 * @return
+	 */
 	public boolean getOpen() {
 		return _open;
 	}
 	
+	/** set if open the dialog
+	 * @param open
+	 */
 	public void setOpen(boolean open) {
 		//if(_open != open){
 		_open = open;
@@ -249,10 +319,16 @@ public class Dialog extends XulElement {
 		//}
 	}
 
+	/**Returns the show
+	 * @return
+	 */
 	public String getShow() {
 		return _show;
 	}
 	
+	/**The effect to be used when the dialog is opened.
+	 * @param show
+	 */
 	public void setShow(String show){
 		if(show == null || show.length() == 0) show="";
 		if (!_show.equals(show)) {
@@ -264,10 +340,16 @@ public class Dialog extends XulElement {
 
 	
 	
+	/**Returns the hide
+	 * @return
+	 */
 	public String getHide() {
 		return _hide;
 	}
 
+	/**The effect to be used when the dialog is closed.
+	 * @param hide
+	 */
 	public void setHide(String hide){
 		//TODO: should check if valid String here.
 		if(hide == null || hide.length() == 0) hide="";
@@ -277,10 +359,16 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Returns the dialogClass
+	 * @return
+	 */
 	public String getDialogClass() {
 		return _dialogClass;
 	}
 	
+	/**The specified class name(s) will be added to the dialog, for additional theming.
+	 * @param dialogClass
+	 */
 	public void setDialogClass(String dialogClass){
 		if(dialogClass == null || dialogClass.length() == 0) dialogClass="";
 		if (!_dialogClass.equals(dialogClass)) {
@@ -288,18 +376,17 @@ public class Dialog extends XulElement {
 			smartUpdate("dialogClass", _dialogClass);
 		}
 	}
-
-
-
-
-
-
-
 	
+	/**Returns the closeText
+	 * @return
+	 */
 	public String getCloseText() {
 		return _closeText;
 	}
 	
+	/**Specifies the text for the close button. Note that the close text is visibly hidden when using a standard theme.
+	 * @param closeText
+	 */
 	public void setCloseText(String closeText){
 		if(closeText == null || closeText.length() == 0) closeText="close";
 		if (!_closeText.equals(closeText)) {
@@ -308,10 +395,16 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the stack
+	 * @return
+	 */
 	public boolean getStack() {
 		return _stack;
 	}
 	
+	/**Specifies whether the dialog will stack on top of other dialogs. This will cause the dialog to move to the front of other dialogs when it gains focus.
+	 * @param stack
+	 */
 	public void setStack(boolean stack) {
 		if(_stack != stack){
 			_stack = stack;
@@ -319,10 +412,16 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the resizable
+	 * @return
+	 */
 	public boolean getResizable() {
 		return _resizable;
 	}
 	
+	/**If set to true, the dialog will be resizeable.
+	 * @param resizable
+	 */
 	public void setResizable(boolean resizable) {
 		if(_resizable != resizable){
 			_resizable = resizable;
@@ -330,10 +429,16 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the modal
+	 * @return
+	 */
 	public boolean getModal() {
 		return _modal;
 	}
 	
+	/**If set to true, the dialog will have modal behavior; other items on the page will be disabled (i.e. cannot be interacted with). Modal dialogs create an overlay below the dialog but above other page elements.
+	 * @param modal
+	 */
 	public void setModal(boolean modal) {
 		if(_modal != modal){
 			_modal = modal;
@@ -341,6 +446,9 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the draggable
+	 * 
+	 */
 	@Override
 	public String getDraggable() {
 		//TODO: mismatch jquery ui, conflict with zk predefined api
@@ -348,6 +456,10 @@ public class Dialog extends XulElement {
 		return String.valueOf(_draggable);
 	}
 	
+	
+	/**If set to true, the dialog will be draggable will be draggable by the titlebar.
+	 * @param draggable
+	 */
 	public void setDraggable(boolean draggable) {
 		if(_draggable != draggable){
 			_draggable = draggable;
@@ -355,10 +467,16 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the closeOnEscape
+	 * @return
+	 */
 	public boolean getCloseOnEscape() {
 		return _closeOnEscape;
 	}
 	
+	/**Specifies whether the dialog should close when it has focus and the user presses the esacpe (ESC) key.
+	 * @param closeOnEscape
+	 */
 	public void setCloseOnEscape(boolean closeOnEscape) {
 		if(_closeOnEscape != closeOnEscape){
 			_closeOnEscape = closeOnEscape;
@@ -366,10 +484,16 @@ public class Dialog extends XulElement {
 		}
 	}
 	
+	/**Returns the autoOpen
+	 * @return
+	 */
 	public boolean getAutoOpen() {
 		return _autoOpen;
 	}
 	
+	/**When autoOpen is true the dialog will open automatically when dialog is called. If false it will stay hidden until .dialog("open")  is called on it.
+	 * @param autoOpen
+	 */
 	public void setAutoOpen(boolean autoOpen) {
 		if(_autoOpen != autoOpen){
 			_autoOpen = autoOpen;
@@ -377,10 +501,16 @@ public class Dialog extends XulElement {
 		}
 	}
 		
+	/**Returns the disabled
+	 * @return
+	 */
 	public boolean getDisabled() {
 		return _disabled;
 	}
 
+	/**Disables (true) or enables (false) the dialog. Can be set when initialising (first creating) the dialog.
+	 * @param disabled
+	 */
 	public void setDisabled(boolean disabled) {
 		if (_disabled != disabled) {
 			_disabled = disabled;
@@ -388,10 +518,16 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Returns the title
+	 * @return
+	 */
 	public String getTitle() {
 		return _title;
 	}
 
+	/**Specifies the title of the dialog. The title can also be specified by the title attribute on the dialog source element.
+	 * @param title
+	 */
 	public void setTitle(String title) {
 		if (title == null)
 			title = "";
@@ -401,10 +537,16 @@ public class Dialog extends XulElement {
 		}
 	}
 
+	/**Returns the content
+	 * @return
+	 */
 	public String getContent() {
 		return _content;
 	}
 
+	/**Set the content to be render as the message of the dialog
+	 * @param content
+	 */
 	public void setContent(String content) {
 		if (content == null)
 			content = "";
@@ -414,6 +556,11 @@ public class Dialog extends XulElement {
 		}
 	}
 
+
+	/**
+	 * Processes an AU request.
+	 * 
+	 */	
 	@Override
 	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
 		final String cmd = request.getCommand();

@@ -76,7 +76,11 @@ public class Progressbar extends XulElement {
 		}
 	}
 
-	
+
+	/**
+	 * Processes an AU request.
+	 * 
+	 */		
 	@Override
 	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
 		final String cmd = request.getCommand();

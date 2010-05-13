@@ -54,7 +54,7 @@
 	</component>
 
 	<component>
-		<component-name>tabs</component-name>
+		<component-name>jqtabs</component-name>
 		<component-class>org.zkoss.jquery4j.jqueryui.tabs.Tabs</component-class>
 		<widget-class>jquery4j.jqueryui.Tabs</widget-class>
 	</component>
