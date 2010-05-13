@@ -24,6 +24,10 @@ import org.zkoss.zk.ui.event.Events;
 import org.zkoss.zk.ui.event.SelectionEvent;
 import org.zkoss.zul.impl.XulElement;
 
+/**An Autocomplete
+ * @author whkuo
+ *
+ */
 public class Autocomplete extends XulElement {
 
 	static {
@@ -40,6 +44,10 @@ public class Autocomplete extends XulElement {
 	
 	private Mix _source = new Mix();//no default value, but never be null
 
+	/**Returns the source
+	 * 
+	 * @return
+	 */
 	public Object getSource() {
 		if(_source != null){
 			return _source.getValue();
@@ -47,6 +55,10 @@ public class Autocomplete extends XulElement {
 		return null;
 	}
 	
+	/**Defines the data to use, must be specified. See Overview section for more details, and look at the various demos.
+	 * 
+	 * @param source
+	 */
 	public void setSource(Object source){
 		if(_source == null) source = new Mix();
 		if(source instanceof String && ((String)source).contains(",")){
@@ -56,10 +68,18 @@ public class Autocomplete extends XulElement {
 		smartUpdate("source", _source.getValue());
 	}
 	
+	/**Returns the minLength
+	 * 
+	 * @return
+	 */
 	public int getMinLength(){
 		return _minLength;
 	}
 	
+	/**The minimum number of characters a user has to type before the Autocomplete activates. Zero is useful for local data with just a few items. Should be increased when there are a lot of items, where a single character would match a few thousand items.
+	 * 
+	 * @param minLength
+	 */
 	public void setMinLength(int minLength){
 		if (minLength < 0 )
 			throw new UiException("Illegal minLength: "+minLength+". Range: 0 ~ ");
@@ -69,11 +89,19 @@ public class Autocomplete extends XulElement {
 			smartUpdate("minLength",_minLength);
 		}
 	}
-		
+
+	/**Returns the delay
+	 * 
+	 * @return
+	 */
 	public int getDelay(){
 		return _delay;
 	}
 	
+	/**The delay in milliseconds the Autocomplete waits after a keystroke to activate itself. A zero-delay makes sense for local data (more responsive), but can produce a lot of load for remote data, while being less responsive.
+	 * 
+	 * @param delay
+	 */
 	public void setDelay(int delay){
 		if (delay < 0 )
 			throw new UiException("Illegal delay: "+delay+". Range: 0 ~ ");
@@ -84,11 +112,17 @@ public class Autocomplete extends XulElement {
 		}	
 	}
 
-	
+	/**Returns the disabled
+	 * 
+	 * @return
+	 */
 	public boolean getDisabled() {
 		return _disabled;
 	}
 	
+	/**Disables (true) or enables (false) the autocomplete. Can be set when initialising (first creating) the autocomplete.
+	 * @param disabled
+	 */
 	public void setDisabled(boolean disabled) {
 		if(_disabled != disabled){
 			_disabled = disabled;
@@ -96,10 +130,16 @@ public class Autocomplete extends XulElement {
 		}
 	}	
 		
+	/**Returns the selected,user selected value
+	 * @return
+	 */
 	public String getSelected(){
 		return _selected;
 	}
 	
+	/** Set the selected, user selected value
+	 * @param selected
+	 */
 	public void setSelected(String selected){								
 		if (selected == null) selected = "";
 		if (!Objects.equals(_selected, selected)) {
@@ -107,7 +147,12 @@ public class Autocomplete extends XulElement {
 			smartUpdate("selected", _selected);
 		}
 	}
-		
+
+
+	/**
+	 * Processes an AU request.
+	 * 
+	 */	
 	@Override
 	public void service(org.zkoss.zk.au.AuRequest request, boolean everError) {
 		final String cmd = request.getCommand();
