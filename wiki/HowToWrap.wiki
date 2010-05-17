@@ -132,7 +132,7 @@ For example `<datepicker disabled="true"/>` sets the option disabled in zul, the
  # renderProperties: Render the `_disabled` property to client side
  # $define:catch renderProperties(), and set client side variables of widget `_disabled`
  # redraw:`_disabled` is available now. note:If it's `_model`, can be used to change html output here. Please refer to source code of accordion, search "model")
- # `bind_`:Use client side variable _disabled to initialize jQuery UI widget.
+ # `bind_`:Use client side variable `_disabled` to initialize jQuery UI widget.
 
 == Test ==
 
