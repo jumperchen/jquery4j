@@ -121,10 +121,10 @@ Download the jar of jQuery4j binary:
 Download ZK:
 
 = See Also =
- *[http://www.zkoss.org ZK official site]
- *[http://jquery.com jQuery official site]
- *[http://jqueryui.com jQuery UI official site]
- *[http://www.zkoss.org/doc/devguide-single/index.html ZK developer guide in html]
- *[http://docs.zkoss.org/wiki/Developer%27s_Guide ZK developer guide in html in wiki]
- *[http://docs.zkoss.org/wiki/Client_Side_Programming ZK: Client Side Programming] 
- *[http://docs.zkoss.org/wiki/How_to_Wrap_a_jQuery_UI_Widget ZK: How to Wrap a jQuery UI Widget]
+ * [http://www.zkoss.org ZK official site]
+ * [http://jquery.com jQuery official site]
+ * [http://jqueryui.com jQuery UI official site]
+ * [http://www.zkoss.org/doc/devguide-single/index.html ZK developer guide in html]
+ * [http://docs.zkoss.org/wiki/Developer%27s_Guide ZK developer guide in html in wiki]
+ * [http://docs.zkoss.org/wiki/Client_Side_Programming ZK: Client Side Programming] 
+ * [http://docs.zkoss.org/wiki/How_to_Wrap_a_jQuery_UI_Widget ZK: How to Wrap a jQuery UI Widget]
