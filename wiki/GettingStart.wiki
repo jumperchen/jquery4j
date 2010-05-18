@@ -4,8 +4,8 @@
 It's aimed to make user who is familiar with java, but maybe not so familiar with javascript can have an easy way to use jQuery widgets.
 Please refer to the homepage of jQuery4j project.
 
-=what's ZK=
-Implemented its widget with jQuery. Therefore, makes it easy to incorporate with other jQuery plugins.
+=What's ZK=
+ZK implemented its widget with jQuery. Therefore, makes it easy to incorporate with other jQuery plugins.
 Has its own 120+ component widget ready to use.
 Support server side integration. 
 Can provide Ajax part support for jQuery.
