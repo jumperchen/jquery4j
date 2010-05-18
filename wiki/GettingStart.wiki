@@ -1,4 +1,4 @@
-#summary : Getting Start with jQuery4j
+#summary Getting Start with jQuery4j
 
 =What's jQuery4j=
 It's aimed to make user who is familiar with java, but maybe not so familiar with javascript can have an easy way to use jQuery widgets.
