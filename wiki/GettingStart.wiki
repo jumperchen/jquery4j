@@ -116,8 +116,8 @@ alert() will send a response back to client side, ask browser to show an message
 If you want to handle the event without server, please refer to [http://docs.zkoss.org/wiki/Client_Side_Programming ZK: Client Side Programming]
 
 = Download =
-Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war]
-Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar]
+ * Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war]
+ * Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar]
 
 
 = See Also =
