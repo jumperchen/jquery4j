@@ -210,6 +210,6 @@ You may implement jQuery UI widget first, and then wrap it to ZK component.
  * [http://docs.zkoss.org/wiki/ZK5:_Component_Development_Guide ZK5: Component Development Guide]
  * [http://jqueryui.com/home jQuery UI]
  * [http://wiki.jqueryui.com/ Roadmap of jQuery UI]
-
+ * [http://docs.zkoss.org/wiki/ZK5:_Component_Development_Guide ZK5: Component Development Guide]
 = Download =
 [http://code.google.com/p/jquery4j/ jQuery4j] : Link /src,/src/archive as java src folder in Eclipse
