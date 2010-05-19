@@ -6,19 +6,6 @@ ZK5 has adapted famous jQuery as underlying JavaScript library.
 jQuery UI is also famous and promising.
 jQuery UI's widgets can be easily wrapped to zk widget now, and enjoy the power of ZK.
 
-= Demo =
-
-{{{
-<datepicker id="target" numberOfMonths="2,2"/>
-<button label="setNumberOfMonths(1)" onClick="target.setNumberOfMonths(1)"/>
-}}}
-
-A [http://docs.zkoss.org/images/6/6a/Datepicker_sample_1.swf Demo]
-
-
-In above example,
-we declare <tt>datepicker</tt> in zul, and then modify its property in java.
-
 = Benefit =
 
 Any pure client widget can now easily connect to server.
