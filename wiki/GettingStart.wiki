@@ -11,6 +11,19 @@ Support server side integration.
 Can provide Ajax part support for jQuery.
 Also provide a rich set of XUL and XHTML components and a markup language called ZUML(ZK User Interface Markup Language).
 
+= Demo =
+
+{{{
+<datepicker id="target" numberOfMonths="2,2"/>
+<button label="setNumberOfMonths(1)" onClick="target.setNumberOfMonths(1)"/>
+}}}
+
+A [http://docs.zkoss.org/images/6/6a/Datepicker_sample_1.swf Demo]
+
+
+In above example,
+we declare <tt>datepicker</tt> in zul, and then modify its property in java.
+
 =How to Use=
 API is mapping to jQuery plugin. So you can set any option.
 For example, in the following section, you can see how to set the ''changeMonth'' option of datepicker in zul and in java.
@@ -116,7 +129,7 @@ alert() will send a response back to client side, ask browser to show an message
 If you want to handle the event without server, please refer to [http://docs.zkoss.org/wiki/Client_Side_Programming ZK: Client Side Programming]
 
 = Download =
- * Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war]
+ * Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war] , demo of more widgets
  * Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar]
 
 
