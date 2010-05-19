@@ -2,7 +2,7 @@
 
 = Introduction =
 
-ZK5 has adapted famous jQuery as underlying javascript library.
+ZK5 has adapted famous jQuery as underlying JavaScript library.
 jQuery UI is also famous and promising.
 jQuery UI's widgets can be easily wrapped to zk widget now, and enjoy the power of ZK.
 
@@ -26,7 +26,7 @@ ZK provides many server side ability.
 Such as DataModel, Databindng, Event Handling.
 
 You can use jQuery UI widget in more simplified syntax in zul, expression language is available too.
-In extreme cases, you can even use only java without any markup language or javascript, just like ZK always do.
+In extreme cases, you can even use only java without any markup language or JavaScript, just like ZK always do.
 You can also modify widget option at run time with java.
 
 And the best of all, you can modify the content of underlying data model with java.
@@ -41,12 +41,12 @@ Since it is only a wrapping, it's far more easy than implementing a whole new ac
 == setup files ==
 
  * lang-addon.xml : Define component-name, component-class, widget-class, and load needed CSS file
- * zk.wpd : Define widget package and load needed javascript file.
- * zk.xml : Setting to make debug Javascript possible. Includes debug-js, org.zkoss.web.classWebResource.cache
+ * zk.wpd : Define widget package and load needed JavaScript file.
+ * zk.xml : Setting to make debug JavaScript possible. Includes debug-js, org.zkoss.web.classWebResource.cache
 
 Please download source code at [http://code.google.com/p/jquery4j/ jQuery4j]. It's concrete to work.
 
-== java script part==
+== JavaScript part==
 
 In most common cases, you have to implement 4 methods:
 
@@ -113,7 +113,7 @@ if(_disabled)
 	(*if false, try renderer.render("disabled", _disabled))
 }}}
 
-In javascript
+In JavaScript
 {{{
 //inside $define
 disabled :  function(){
@@ -198,7 +198,7 @@ Although jQuery UI has only 8 widgets now, but it has planned to provide more in
 
 There is still jobs to perfect this project. Including databinding, and childable component.
 
-It's fun to have many other little widgets to enrich ZK. It's easier to wrap jQuery UI widget than jQuery widget than javascript widget. Since the former followes more coding discipline, less "surprise" to overcome.
+It's fun to have many other little widgets to enrich ZK. It's easier to wrap jQuery UI widget than jQuery widget than JavaScript widget. Since the former followes more coding discipline, less "surprise" to overcome.
 Sometimes, widget from different source may conflict. For example, a fancy calculator jQuery Widget conflict
 with jQuery UI library, because jQuery UI library rewrites some jQuery function show().
 
