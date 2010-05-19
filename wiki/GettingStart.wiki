@@ -1,7 +1,7 @@
 #summary Getting Start with jQuery4j
 
 =What's jQuery4j=
-It's aimed to make user who is familiar with java, but maybe not so familiar with javascript can have an easy way to use jQuery widgets.
+It's aimed to make user who is familiar with java, but maybe not so familiar with JavaScript can have an easy way to use jQuery widgets.
 Please refer to the homepage of jQuery4j project.
 
 =What's ZK=
