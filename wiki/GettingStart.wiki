@@ -130,7 +130,7 @@ If you want to handle the event without server, please refer to [http://docs.zko
 
 = Download =
  * Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war] , demo of more widgets
- * Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar]
+ * Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar], if you already have ZK environment, download this jar to your classpath, then you should be able to use these new widgets.
 
 
 = See Also =
