@@ -1,4 +1,5 @@
 #summary Getting Start with jQuery4j
+#labels Featured
 
 =What's jQuery4j=
 It's aimed to make user who is familiar with java, but maybe not so familiar with JavaScript can have an easy way to use jQuery widgets.
