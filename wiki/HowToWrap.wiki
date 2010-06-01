@@ -1,4 +1,5 @@
 #summary How to Wrap a jQuery UI Widget
+#labels Featured
 
 = Introduction =
 
