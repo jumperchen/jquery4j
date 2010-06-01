@@ -68,11 +68,10 @@ note: Some component has naming conflict with original ZK component, for such co
 
 == By Pure Java ==
 
-Richlet:
 A [http://docs.zkoss.org/wiki/SWING richlet] is a small Java program that creates all necessary components in response to user's request.
 You can compose the UI by purely java, without html, ZUML. The programming logic is much like swing.
 
-Sample:
+For example:
 The mapping richlet for
 
 {{{
@@ -128,9 +127,8 @@ alert() will send a response back to client side, ask browser to show an message
 If you want to handle the event without server, please refer to [http://docs.zkoss.org/wiki/Client_Side_Programming ZK: Client Side Programming]
 
 = Download =
- * Download the demo war:[http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war] , demo of more widgets. 
- * Download the jar of jQuery4j binary:[http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar], if you already have ZK environment, download this jar to your classpath, then you should be able to use these new widgets.
-
+ * [http://jquery4j.googlecode.com/files/jquery4j.war jquery4j.war] : You can run [http://www.jquery4j.org/ Online Demo] at your local site, simply copy it to \webapps\ directory under Tomcat.
+ * [http://jquery4j.googlecode.com/files/jquery4j.jar jquery4j.jar], if you already have ZK environment, download this jar to your classpath, then you should be able to use these new widgets.
 
 = See Also =
  * [http://www.zkoss.org ZK official site]
