@@ -21,13 +21,13 @@ A [http://docs.zkoss.org/images/6/6a/Datepicker_sample_1.swf Screencast of previ
 
 
 In above example,
-we declare <tt>datepicker</tt> in zul, and then modify its property in java.
+we declare <tt>datepicker</tt> in [http://docs.zkoss.org/wiki/ZUML zul], and then modify its property in java.
 
 =How to Use=
-API is mapping to jQuery plugin. So you can set any option.
-For example, in the following section, you can see how to set the ''changeMonth'' option of datepicker in zul and in java.
+Java API is mapping to jQuery plugin. So you can set any option the jQuery Widget has.
+For example, in the following section, you can see how to set the ''changeMonth'' option of datepicker in [http://docs.zkoss.org/wiki/ZUML zul] and in java.
 
-ZK introduced ''model'' concept. You can save the data needed to be presented as model, and render it at client side. It abstracts data from actual  user interface.
+ZK introduced ''model'' concept. You can save the data needed to be presented as model, and render it at client side. It abstracts data from actual user interface.
 
 For event, it's basically handled in server side.(Though you can also handle event in client side if you like)
 
@@ -64,12 +64,12 @@ To get the date choosed by datepicker:
 
 target.getDate() will get the date choosed by datepicker whose id is "target".
 
-note: Some component has naming conflict with original zk component, for such component, we'll add 'jq' as prefix, stands for 'jQuery'
+note: Some component has naming conflict with original ZK component, for such component, we'll add 'jq' as prefix, stands for 'jQuery'
 
 == By Pure Java ==
 
 Richlet:
-A richlet is a small Java program that creates all necessary components in response to user's request.
+A [http://docs.zkoss.org/wiki/SWING richlet] is a small Java program that creates all necessary components in response to user's request.
 You can compose the UI by purely java, without html, ZUML. The programming logic is much like swing.
 
 Sample:
@@ -97,7 +97,7 @@ public class DatepickerRichlet extends GenericRichlet {
 }
 }}}
 
-note: You have to properly setup web.xml and zk.xml to make richlet work. Please refer to [http://docs.zkoss.org/wiki/SWING richlet] chapter of ZK developer's guide.
+note: You have to properly setup web.xml and zk.xml to make richlet work. Please refer to [http://docs.zkoss.org/wiki/SWING richlet] chapter of [http://docs.zkoss.org/wiki/Developer%27s_Guide ZK developer's guide].
 
 == Model Concept ==
 {{{
