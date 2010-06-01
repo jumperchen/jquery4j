@@ -24,7 +24,7 @@ In above example,
 we declare <tt>datepicker</tt> in [http://docs.zkoss.org/wiki/ZUML zul], and then modify its property in java.
 
 =How to Use=
-Java API is mapping to jQuery plugin. So you can set any option the jQuery Widget has.
+Java API is mapping to jQuery plugin. So you can set any option a jQuery Widget has.
 For example, in the following section, you can see how to set the ''changeMonth'' option of datepicker in [http://docs.zkoss.org/wiki/ZUML zul] and in java.
 
 ZK introduced ''model'' concept. You can save the data needed to be presented as model, and render it at client side. It abstracts data from actual user interface.
@@ -33,7 +33,7 @@ For event, it's basically handled in server side.(Though you can also handle eve
 
 == By ZUML == 
 
-In original jQuery UI, you have to write this:
+In original jQuery UI, to declare a ''datepicker'' you have to write:
 
 {{{
 $(function() {
@@ -49,13 +49,13 @@ In jQuery4j, the equivalent can be achieved by zul:
 <datepicker/>
 }}}
 
-To set an option when initialize datepicker:
+To set an option when initialize datepicker by zul:
 
 {{{
 <datepicker changeMonth="true"/>
 }}}
 
-To get the date choosed by datepicker:
+To get the date choosed by datepicker by zul:
 
 {{{
 <datepicker id="target"/>
