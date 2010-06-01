@@ -17,7 +17,7 @@ Has its own 120+ component widget ready to use.
 <button label="setNumberOfMonths(1)" onClick="target.setNumberOfMonths(1)"/>
 }}}
 
-A [http://docs.zkoss.org/images/6/6a/Datepicker_sample_1.swf Screencast of previous Demo]
+A [http://docs.zkoss.org/images/6/6a/Datepicker_sample_1.swf Screencast of above code]
 
 
 In above example,
@@ -111,7 +111,7 @@ note: You have to properly setup web.xml and zk.xml to make richlet work. Please
 <accordion model="${tm}"/>
 }}}
 
-ZK will use the data inside model, to render html, then call jQuery's accordion.
+ZK will use the data inside model, to render html, then call ''accordion'' command of jQuery UI .
 
 note: Currently, model implementation not yet provide much flexibility of jQuery, but it can be approved. Just give me some time to catch up.
 
