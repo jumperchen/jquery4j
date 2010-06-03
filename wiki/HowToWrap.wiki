@@ -1,5 +1,6 @@
 #summary How to Wrap a jQuery UI Widget
 #labels Featured
+<wiki:toc max_depth="2" />
 
 = Introduction =
 
