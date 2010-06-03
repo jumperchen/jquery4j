@@ -5,8 +5,10 @@
 	<stylesheet href="~./js/jquery4j/jquery/ext/crayonbox/jquery.crayonbox.css" type="text/css" />
 	<stylesheet href="~./js/jquery4j/jquery/ext/calculator/jquery.calculator.css" type="text/css" />
 	
+	<!-- 
 	<stylesheet href="~./js/jquery4j/jqueryui/ext/css/smoothness/jquery-ui-1.8.custom.css" type="text/css" /> 
-	  
+	-->
+	<stylesheet href="~./js/jquery4j/jqueryui/ext/css/ui-lightness/jquery-ui-1.8.1.custom.css" type="text/css" />
 	
 	<addon-name>jqueryui</addon-name>
 	<language-name>xul/html</language-name>
