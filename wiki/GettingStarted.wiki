@@ -4,7 +4,7 @@
 <wiki:toc max_depth="2" />
 
 =What's jQuery4j=
-It's aimed to give developer the power to control jQuery widget with purely java and markup language.
+It is aimed to give developer the power to control jQuery widget with purely java and markup language.
 
 =What's ZK=
 [http://www.zkoss.org ZK] is the most proven Ajax + Mobile framework available, designed to maximize an enterprise’s operational efficiency and minimize development time and cost.
